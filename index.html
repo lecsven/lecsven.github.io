@@ -85,7 +85,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2020/12/25/%E6%B5%8B%E8%AF%95%E7%94%A8github%E5%8F%91%E8%A1%A8%E6%96%87%E7%AB%A0/">测试用github发表文章</a>
+      <a class="p-name article-title" href="/2020/12/25/%E6%B5%8B%E8%AF%95%E7%94%A8github%E5%8F%91%E8%A1%A8%E6%96%87%E7%AB%A0/">用Github Pages 发表文章</a>
     </h1>
   
 
@@ -93,61 +93,88 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>用<strong>Hexo</strong>框架，可以使用<strong>Markdown</strong>来写文章，然后上传到<strong>github</strong>上面，网页就会自动更新了。</p>
+        <p>现在有很多免费的发表文章的平台，比如简书、公众号、知乎等等，但是这些网站对发表的文章会有比较严格的审核，有时候会审核不通过，但是并不告诉你原因。</p>
+<p>就算能通过了，多一个平台发表就相当于多了一个备份，所以我就想寻找一个免费但是比较靠谱而且比较自由的发布平台。Github Pages就是这样的平台。</p>
+<p>用<strong>Hexo</strong>框架，可以使用<strong>Markdown</strong>来写文章，然后上传到<strong>github</strong>上面，网页就会自动更新了。</p>
+<p>下面简单记录下流程，当作备忘。</p>
+<p>首先安装node.js，安装npm，安装git ，具体教程网上很多，这里就不赘述了。</p>
+<p>以下命令可以查看版本：</p>
 <p><img src="https://i.loli.net/2020/12/25/jgckiJfD5PbXYZp.png" alt="image-20201225105608896"></p>
+<p>注册Github 账号，然后新建New repository:</p>
 <p><img src="https://i.loli.net/2020/12/25/VToPhwgEHCl8pNL.png" alt="image-20201225105642727"></p>
+<p>名字以<code>github.io</code>结尾</p>
 <p><img src="https://i.loli.net/2020/12/25/7ofFlhUX2JyTazG.png" alt="image-20201225105807410"></p>
-<p><img src="https://i.loli.net/2020/12/25/Ubk5Gg3JamHs1fh.png" alt="image-20201225133606047"></p>
+<p>创建完：</p>
 <p><img src="https://i.loli.net/2020/12/25/epaYKv7q6WCxAiz.png" alt="image-20201225110029160"></p>
-<p><img src="https://i.loli.net/2020/12/25/iARbDunyg7xCXek.png" alt="image-20201225133651728"></p>
-<p><img src="https://i.loli.net/2020/12/25/4LwkQEGxFda658v.png" alt="image-20201225110051616"></p>
+<p>设置主题：</p>
 <p><img src="https://i.loli.net/2020/12/25/G9w52KSBkbFtOJo.png" alt="image-20201225110614663"></p>
-<p><img src="https://i.loli.net/2020/12/25/YzCXTQb5KqV8W3P.png" alt="image-20201225134017716"></p>
 <p><img src="https://i.loli.net/2020/12/25/iaE7fUOgDyhvHPY.png" alt="image-20201225110809768"></p>
+<p>选择一个喜欢的主题：</p>
 <p><img src="https://i.loli.net/2020/12/25/lPTmiVxBpkJudYU.png" alt="image-20201225122439852"></p>
-<p><img src="https://i.loli.net/2020/12/25/Tjg3Cm8FHpvDnlc.png" alt="image-20201225134331456"></p>
-<p><img src="https://i.loli.net/2020/12/25/J1adFs2T5zhfMXO.png" alt="image-20201225134421336"></p>
+<p>打开网页如此显示：</p>
 <p><img src="C:/Users/CHT/AppData/Roaming/Typora/typora-user-images/image-20201225134340815.png" alt="image-20201225134340815"></p>
 <h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><p>我在电脑上面新建一个文件夹<strong>blog</strong>，路径在：H:\Dropbox\blog</p>
 <p>右键Git bash here，打开git窗口</p>
+<p>输入<code>npm i hexo-cli -g</code>安装Hexo</p>
 <p><img src="https://i.loli.net/2020/12/25/t9Zusx7LrnPQBcX.png" alt="image-20201225122832550"></p>
+<p><code>hexo -v</code>查看hexo是否安装成功</p>
 <p><img src="https://i.loli.net/2020/12/25/X7grCTLe6NhJxZm.png" alt="image-20201225122856499"></p>
+<p>输入<code>hexo init</code>初始化文件夹</p>
 <p><img src="https://i.loli.net/2020/12/25/9Vwl1EhvWQjGBgf.png" alt="image-20201225122929375"></p>
+<p><code>npm install</code>安装必备的组件</p>
 <p><img src="https://i.loli.net/2020/12/25/2Tb7eE4G5RmgXsa.png" alt="image-20201225122950017"></p>
-<p><img src="https://i.loli.net/2020/12/25/d7uZKYHX4iroejg.png" alt="image-20201225123036565"></p>
-<p><img src="https://i.loli.net/2020/12/25/pFyqgwkudNVEPGa.png" alt="image-20201225123056279"></p>
-<p>打开：<a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000/</a></p>
+<p>添加自己的文章到H:\Dropbox\blog\source_posts路径下面：</p>
 <p>在H:\Dropbox\blog\source_posts下面是这样的：</p>
 <p><img src="https://i.loli.net/2020/12/25/OYKMudlpfcDtBVs.png" alt="image-20201225123318427"></p>
-<p>打开网页是这样的：</p>
-<p><img src="https://i.loli.net/2020/12/25/wWECVoX1NBSFxfn.png" alt="image-20201225123354344"></p>
-<p>添加自己的文章到H:\Dropbox\blog\source_posts路径下面：</p>
+<p><code>hexo g</code>生成静态网页</p>
+<p><img src="https://i.loli.net/2020/12/25/d7uZKYHX4iroejg.png" alt="image-20201225123036565"></p>
+<p><code>hexo s</code>打开本地服务器</p>
+<p><img src="https://i.loli.net/2020/12/25/pFyqgwkudNVEPGa.png" alt="image-20201225123056279"></p>
 <p>刷新一下<a target="_blank" rel="noopener" href="http://localhost:4000/%E9%A1%B5%E9%9D%A2%EF%BC%9A">http://localhost:4000/页面：</a></p>
-<p><img src="https://i.loli.net/2020/12/25/DI4l5uiqBbQLnGf.png" alt="image-20201225123555237"></p>
 <p>把我们自己的文章显示在页面上了。</p>
+<p><img src="https://i.loli.net/2020/12/25/wWECVoX1NBSFxfn.png" alt="image-20201225123354344"></p>
 <p>接下来就把文章上传到github上面</p>
 <p>按<code>ctrl+c</code>关闭本地服务器。</p>
+<p>设置Github的<code>user.name</code>和<code>user.email</code>，这个是必须的。</p>
 <p><img src="https://i.loli.net/2020/12/25/6SC25pZQ4UxGoyV.png" alt="image-20201225125017698"></p>
+<p>生成密钥SSH key：</p>
 <p><img src="https://i.loli.net/2020/12/25/ufi6tgxVHYJEa7O.png" alt="image-20201225124939610"></p>
+<p>获取密钥：</p>
 <p><img src="https://i.loli.net/2020/12/25/h3PMEpYQ2KTC9wo.png" alt="image-20201225125548986"></p>
+<p>可以在本地查看到这个密钥：</p>
 <p><img src="https://i.loli.net/2020/12/25/zZ8rS7FNBLh3Alf.png" alt="image-20201225124840290"></p>
+<p>打开后这样显示：</p>
+<p>与上面的显示的密钥是一样的。</p>
 <p><img src="https://i.loli.net/2020/12/25/sQnTXBN4CDKgkoW.png" alt="image-20201225125107397"></p>
+<p>打开github.com，选择<code>Setting</code> </p>
+<p><img src="https://i.loli.net/2020/12/28/aK9GBX8FWTUMrDs.png" alt="image-20201228174208392"></p>
+<p>左边选择<code>SSH and GPG keys</code> ，然后右上角选择<code>New SSH key</code></p>
+<p><img src="https://i.loli.net/2020/12/28/bdEiYuNKlUGqBTM.png" alt="image-20201228174436585"></p>
+<p>新建一个SSH keys，名字随便。</p>
 <p><img src="https://i.loli.net/2020/12/25/ye8k9cWlpHXsVON.png" alt="image-20201225125220715"></p>
+<p>创建完了：</p>
 <p><img src="https://i.loli.net/2020/12/25/41XCTv65RD28txy.png" alt="image-20201225125349110"></p>
+<p>测试一下，输入<code>ssh -T git@github.com</code></p>
 <p><img src="https://i.loli.net/2020/12/25/i8N4Jr2a7TeUxcA.png" alt="image-20201225125754236"></p>
-<p>最后一行：</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: https://github.com/lecsven/practice</span><br><span class="line">  branch: main</span><br></pre></td></tr></table></figure>
+<p>成功了。</p>
+<p><code>_config.yml</code>文件最后一行：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: https://github.com/lecsven/practice.github.io</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
 <p>repository修改为你自己的github项目地址。</p>
 <p><img src="https://i.loli.net/2020/12/25/6iGr9MYIDfu5FxH.png" alt="image-20201225130823965"></p>
 <p><img src="https://i.loli.net/2020/12/25/4m7yCfHxEjlFLPv.png" alt="image-20201225131029315"></p>
 <p>会发现H:\Dropbox\blog\source_posts多了个文件：new-article.md</p>
+<p>在文件里面修改好文字。</p>
+<p>然后<code>hexo g</code>生成静态网页，<code>hexo s</code>可以本地预览效果：</p>
 <p><img src="https://i.loli.net/2020/12/25/ePk9LEOMmAoJ5Cy.png" alt="image-20201225131306647"></p>
+<p>最后输入<code>hexo d</code>上传到github上，会需要输入用户名和密码，密码可能是弹出的窗口。</p>
 <p><img src="https://i.loli.net/2020/12/25/6lkbvyM4sTQiupt.png" alt="image-20201225131820271"></p>
+<p>好了，能够在网页上看到更新后的文章了。</p>
+<p>这是一个比较不错的文章备份仓库。可以自由修改，更改主题，不断折腾新的功能。还有很多新的功能下次继续聊。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2020/12/25/%E6%B5%8B%E8%AF%95%E7%94%A8github%E5%8F%91%E8%A1%A8%E6%96%87%E7%AB%A0/" data-id="ckj8bb1sy0003mgcp8hkfd6se" data-title="测试用github发表文章" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2020/12/25/%E6%B5%8B%E8%AF%95%E7%94%A8github%E5%8F%91%E8%A1%A8%E6%96%87%E7%AB%A0/" data-id="ckj8bb1sy0003mgcp8hkfd6se" data-title="用Github Pages 发表文章" class="article-share-link">Share</a>
       
       
       
@@ -352,7 +379,7 @@
       <ul>
         
           <li>
-            <a href="/2020/12/25/%E6%B5%8B%E8%AF%95%E7%94%A8github%E5%8F%91%E8%A1%A8%E6%96%87%E7%AB%A0/">测试用github发表文章</a>
+            <a href="/2020/12/25/%E6%B5%8B%E8%AF%95%E7%94%A8github%E5%8F%91%E8%A1%A8%E6%96%87%E7%AB%A0/">用Github Pages 发表文章</a>
           </li>
         
           <li>
