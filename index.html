@@ -145,6 +145,90 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/06/Github-Page-%E5%8F%91%E8%A1%A8%E6%96%87%E7%AB%A0%E7%9A%84%E6%B5%81%E7%A8%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/05/06/Github-Page-%E5%8F%91%E8%A1%A8%E6%96%87%E7%AB%A0%E7%9A%84%E6%B5%81%E7%A8%8B/" class="post-title-link" itemprop="url">Github Page 发表文章的流程</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-05-06 11:31:28 / Modified: 11:58:16" itemprop="dateCreated datePublished" datetime="2021-05-06T11:31:28+08:00">2021-05-06</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>找到blog本地的文件夹，我的目录<code>H:\Dropbox\all-blog\lecsven.github.io\</code></p>
+<p>右键选择”Git Bash Here”</p>
+<p><img src="https://i.loli.net/2021/05/06/5jFrd8B7tsfP2n3.png" alt="image-20210506112733590"></p>
+<p>输入<code>hexo new post &quot;文章名字&quot;</code>，注意文章名的双引号得确认是英文输入的。</p>
+<p><img src="https://i.loli.net/2021/05/06/WUcqxfioGaAgdDh.png" alt="image-20210506113308742"></p>
+<p>然后在<code>H:\Dropbox\all-blog\lecsven.github.io\source\_posts\</code>打开md文件</p>
+<p><img src="https://i.loli.net/2021/05/06/i7ESWrf4mDJGLqb.png" alt="image-20210506113837848"></p>
+<p>开始写文章</p>
+<p><img src="https://i.loli.net/2021/05/06/JuD9SfgqAlsKUxZ.png" alt="image-20210506114034412"></p>
+<p>完成之后按照以下顺序操作：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git status <span class="comment"># 查看 git 仓库的变化</span></span><br><span class="line">git add . <span class="comment"># 添加全部修改到寄存区</span></span><br><span class="line">git commit <span class="literal">-m</span> <span class="string">&#x27;changed&#x27;</span> <span class="comment"># 提交</span></span><br><span class="line">git push origin hexo <span class="comment"># 推送到远程仓库的 hexo 分支</span></span><br></pre></td></tr></table></figure>
+<p>操作完成：</p>
+<p><img src="https://i.loli.net/2021/05/06/eDSvjJhQpk35Ngu.png" alt="image-20210506114346103"></p>
+<p>打开<code>https://github.com/lecsven/lecsven.github.io</code>查看状态</p>
+<p><img src="https://i.loli.net/2021/05/06/5xFVDezwglsQT6f.png" alt="image-20210506114555327"></p>
+<p>确认静态文件已经正确上传：</p>
+<p><img src="https://i.loli.net/2021/05/06/wfSCbmg5dEuhTol.png" alt="image-20210506114652456"></p>
+<p><strong>接下来部署静态文件，使得内容可以在网页上面正常显示</strong></p>
+<p>在<code>H:\Dropbox\all-blog\lecsven.github.io</code>文件夹下面的<code>_config.yml</code>里面</p>
+<p>确保如下设置：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repository:</span> <span class="string">https://github.com/lecsven/lecsven.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
+<p><code>  branch: master</code>能够让部署的文件直接上传到<code>master</code>分支</p>
+<p>开始部署：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hexo clean # 清理缓存</span><br><span class="line">hexo g # 生成静态文件</span><br><span class="line">hexo s # 本地预览</span><br><span class="line">hexo d # 部署（跟 _config.yml 文件中的 deploy 选项相关）</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/06/%E6%9D%8E%E7%AC%91%E6%9D%A5%E4%BD%9C%E5%93%81%E9%9B%86/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -711,7 +795,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-count">6</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
