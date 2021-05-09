@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="设置默认shell使用下面命令设置默认shell 1chsh -s &#x2F;bin&#x2F;zsh   如果想修改回默认dash，同样使用chsh命令即可： 1chsh -s &#x2F;bin&#x2F;bash cat 命令cat可以直接获取配置文件的内容 gitconfig 文件的路径在~下面： 可以直接显示git的配置文件：  安装 oh-my-zsh Curl 直接安装报错 1curl: (35) L">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mac 命令行配置">
+<meta property="og:url" content="http://example.com/2021/05/09/Mac-%E5%91%BD%E4%BB%A4%E8%A1%8C%E9%85%8D%E7%BD%AE/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="设置默认shell使用下面命令设置默认shell 1chsh -s &#x2F;bin&#x2F;zsh   如果想修改回默认dash，同样使用chsh命令即可： 1chsh -s &#x2F;bin&#x2F;bash cat 命令cat可以直接获取配置文件的内容 gitconfig 文件的路径在~下面： 可以直接显示git的配置文件：  安装 oh-my-zsh Curl 直接安装报错 1curl: (35) L">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNgy1gqbvvwkhn4j31860iemzf.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNgy1gqba8kgp99j31kh0u0jz2.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNgy1gqbvw4lemlj318z0u0qii.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNgy1gqbvw9k0ldj30gs0k014w.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNgy1gqbad3gdebj317x0u0n3x.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNgy1gqbhc6qg0ej31f60qewoc.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNgy1gqbvwj2vnij316w0u046w.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNgy1gqbb0s5sdyj317d0u0k0n.jpg">
+<meta property="article:published_time" content="2021-05-09T00:44:43.000Z">
+<meta property="article:modified_time" content="2021-05-09T00:51:32.950Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/008i3skNgy1gqbvvwkhn4j31860iemzf.jpg">
+
+<link rel="canonical" href="http://example.com/2021/05/09/Mac-%E5%91%BD%E4%BB%A4%E8%A1%8C%E9%85%8D%E7%BD%AE/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>Mac 命令行配置 | Hexo</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Hexo</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/09/Mac-%E5%91%BD%E4%BB%A4%E8%A1%8C%E9%85%8D%E7%BD%AE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Mac 命令行配置
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-05-09 08:44:43 / Modified: 08:51:32" itemprop="dateCreated datePublished" datetime="2021-05-09T08:44:43+08:00">2021-05-09</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="设置默认shell"><a href="#设置默认shell" class="headerlink" title="设置默认shell"></a>设置默认shell</h3><p>使用下面命令设置默认shell</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chsh -s /bin/zsh</span><br></pre></td></tr></table></figure>
+
+
+<p>如果想修改回默认dash，同样使用chsh命令即可：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chsh -s &#x2F;bin&#x2F;bash</span><br></pre></td></tr></table></figure>
+<h3 id="cat-命令"><a href="#cat-命令" class="headerlink" title="cat 命令"></a>cat 命令</h3><p><code>cat</code>可以直接获取配置文件的内容</p>
+<p><code>gitconfig</code> 文件的路径在~下面：</p>
+<p>可以直接显示git的配置文件：</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gqbvvwkhn4j31860iemzf.jpg" alt="image-20210508200511388"></p>
+<h3 id="安装-oh-my-zsh"><a href="#安装-oh-my-zsh" class="headerlink" title="安装 oh-my-zsh"></a>安装 oh-my-zsh</h3><p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gqba8kgp99j31kh0u0jz2.jpg" alt="image-20210508201638508"></p>
+<p>Curl 直接安装报错</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl: (35) LibreSSL SSL_connect: SSL_ERROR_SYSCALL in connection to raw.githubusercontent.com:443</span><br></pre></td></tr></table></figure>
+<p>找到这个教程：</p>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/b1de316fc3fc">https://www.jianshu.com/p/b1de316fc3fc</a></p>
+<p>可以把sh文件下载然后本地安装</p>
+<p>首先打开：<a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh">https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh</a></p>
+<p>可以看到内容，证明连接没问题</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gqbvw4lemlj318z0u0qii.jpg" alt="image-20210508201944740"></p>
+<p>直接保存文件为install.sh</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gqbvw9k0ldj30gs0k014w.jpg" alt="image-20210508202020881"></p>
+<p>切换到下载文件的路径，然后运行<code>bash install.sh</code></p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gqbad3gdebj317x0u0n3x.jpg" alt="image-20210508202101065"></p>
+<p>搞定！</p>
+<p>另一方法是更换国内源，没测试，可供参考：</p>
+<p><a target="_blank" rel="noopener" href="https://www.codenong.com/cs109529180/">https://www.codenong.com/cs109529180/</a></p>
+<h3 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h3><h4 id="关于autojump"><a href="#关于autojump" class="headerlink" title="关于autojump"></a>关于autojump</h4><p>参考链接：</p>
+<p><a target="_blank" rel="noopener" href="https://yuweiguocn.github.io/command-line-autojump/">https://yuweiguocn.github.io/command-line-autojump/</a></p>
+<h4 id="安装Powerline"><a href="#安装Powerline" class="headerlink" title="安装Powerline"></a>安装Powerline</h4><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install powerline-status</span><br></pre></td></tr></table></figure>
+
+
+<h4 id="关于Powerline-乱码"><a href="#关于Powerline-乱码" class="headerlink" title="关于Powerline 乱码"></a>关于Powerline 乱码</h4><p>如下设置：</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gqbhc6qg0ej31f60qewoc.jpg" alt="image-20210509002220991"></p>
+<p>参考链接：<a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1612798">https://cloud.tencent.com/developer/article/1612798</a></p>
+<h3 id="Home-brew-安装"><a href="#Home-brew-安装" class="headerlink" title="Home brew 安装"></a>Home brew 安装</h3><p>和安装oh-my-zsh同理</p>
+<p>先把sh文件保存到本地为homebrew.sh</p>
+<p>然后使用 bash  homebrew.sh安装</p>
+<p>安装完成</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gqbvwj2vnij316w0u046w.jpg" alt="image-20210508203942307"></p>
+<p>之前可能是网络问题，用这种方式安装挺顺利的。</p>
+<h3 id="试试安装wget"><a href="#试试安装wget" class="headerlink" title="试试安装wget"></a>试试安装wget</h3><p>命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install wget</span><br></pre></td></tr></table></figure>
+<p>顺利安装：</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gqbb0s5sdyj317d0u0k0n.jpg" alt="image-20210508204347203"></p>
+<h3 id="参考链接："><a href="#参考链接：" class="headerlink" title="参考链接："></a>参考链接：</h3><p><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000014992947">https://segmentfault.com/a/1190000014992947</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/106791346">https://zhuanlan.zhihu.com/p/106791346</a></p>
+<p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1684785">https://cloud.tencent.com/developer/article/1684785</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.zrahh.com/archives/167.html">https://www.zrahh.com/archives/167.html</a></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/05/06/Github-Page-%E5%8F%91%E8%A1%A8%E6%96%87%E7%AB%A0%E7%9A%84%E6%B5%81%E7%A8%8B/" rel="prev" title="Github Page 发表文章的流程">
+      <i class="fa fa-chevron-left"></i> Github Page 发表文章的流程
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E9%BB%98%E8%AE%A4shell"><span class="nav-number">1.</span> <span class="nav-text">设置默认shell</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cat-%E5%91%BD%E4%BB%A4"><span class="nav-number">2.</span> <span class="nav-text">cat 命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-oh-my-zsh"><span class="nav-number">3.</span> <span class="nav-text">安装 oh-my-zsh</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E6%8F%92%E4%BB%B6"><span class="nav-number">4.</span> <span class="nav-text">安装插件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%B3%E4%BA%8Eautojump"><span class="nav-number">4.1.</span> <span class="nav-text">关于autojump</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85Powerline"><span class="nav-number">4.2.</span> <span class="nav-text">安装Powerline</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%B3%E4%BA%8EPowerline-%E4%B9%B1%E7%A0%81"><span class="nav-number">4.3.</span> <span class="nav-text">关于Powerline 乱码</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Home-brew-%E5%AE%89%E8%A3%85"><span class="nav-number">5.</span> <span class="nav-text">Home brew 安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%95%E8%AF%95%E5%AE%89%E8%A3%85wget"><span class="nav-number">6.</span> <span class="nav-text">试试安装wget</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5%EF%BC%9A"><span class="nav-number">7.</span> <span class="nav-text">参考链接：</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">John Doe</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

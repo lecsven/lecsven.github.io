@@ -145,6 +145,112 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/09/Mac-%E5%91%BD%E4%BB%A4%E8%A1%8C%E9%85%8D%E7%BD%AE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/05/09/Mac-%E5%91%BD%E4%BB%A4%E8%A1%8C%E9%85%8D%E7%BD%AE/" class="post-title-link" itemprop="url">Mac 命令行配置</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-05-09 08:44:43 / Modified: 08:51:32" itemprop="dateCreated datePublished" datetime="2021-05-09T08:44:43+08:00">2021-05-09</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="设置默认shell"><a href="#设置默认shell" class="headerlink" title="设置默认shell"></a>设置默认shell</h3><p>使用下面命令设置默认shell</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chsh -s /bin/zsh</span><br></pre></td></tr></table></figure>
+
+
+<p>如果想修改回默认dash，同样使用chsh命令即可：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chsh -s &#x2F;bin&#x2F;bash</span><br></pre></td></tr></table></figure>
+<h3 id="cat-命令"><a href="#cat-命令" class="headerlink" title="cat 命令"></a>cat 命令</h3><p><code>cat</code>可以直接获取配置文件的内容</p>
+<p><code>gitconfig</code> 文件的路径在~下面：</p>
+<p>可以直接显示git的配置文件：</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gqbvvwkhn4j31860iemzf.jpg" alt="image-20210508200511388"></p>
+<h3 id="安装-oh-my-zsh"><a href="#安装-oh-my-zsh" class="headerlink" title="安装 oh-my-zsh"></a>安装 oh-my-zsh</h3><p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gqba8kgp99j31kh0u0jz2.jpg" alt="image-20210508201638508"></p>
+<p>Curl 直接安装报错</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl: (35) LibreSSL SSL_connect: SSL_ERROR_SYSCALL in connection to raw.githubusercontent.com:443</span><br></pre></td></tr></table></figure>
+<p>找到这个教程：</p>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/b1de316fc3fc">https://www.jianshu.com/p/b1de316fc3fc</a></p>
+<p>可以把sh文件下载然后本地安装</p>
+<p>首先打开：<a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh">https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh</a></p>
+<p>可以看到内容，证明连接没问题</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gqbvw4lemlj318z0u0qii.jpg" alt="image-20210508201944740"></p>
+<p>直接保存文件为install.sh</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gqbvw9k0ldj30gs0k014w.jpg" alt="image-20210508202020881"></p>
+<p>切换到下载文件的路径，然后运行<code>bash install.sh</code></p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gqbad3gdebj317x0u0n3x.jpg" alt="image-20210508202101065"></p>
+<p>搞定！</p>
+<p>另一方法是更换国内源，没测试，可供参考：</p>
+<p><a target="_blank" rel="noopener" href="https://www.codenong.com/cs109529180/">https://www.codenong.com/cs109529180/</a></p>
+<h3 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h3><h4 id="关于autojump"><a href="#关于autojump" class="headerlink" title="关于autojump"></a>关于autojump</h4><p>参考链接：</p>
+<p><a target="_blank" rel="noopener" href="https://yuweiguocn.github.io/command-line-autojump/">https://yuweiguocn.github.io/command-line-autojump/</a></p>
+<h4 id="安装Powerline"><a href="#安装Powerline" class="headerlink" title="安装Powerline"></a>安装Powerline</h4><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install powerline-status</span><br></pre></td></tr></table></figure>
+
+
+<h4 id="关于Powerline-乱码"><a href="#关于Powerline-乱码" class="headerlink" title="关于Powerline 乱码"></a>关于Powerline 乱码</h4><p>如下设置：</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gqbhc6qg0ej31f60qewoc.jpg" alt="image-20210509002220991"></p>
+<p>参考链接：<a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1612798">https://cloud.tencent.com/developer/article/1612798</a></p>
+<h3 id="Home-brew-安装"><a href="#Home-brew-安装" class="headerlink" title="Home brew 安装"></a>Home brew 安装</h3><p>和安装oh-my-zsh同理</p>
+<p>先把sh文件保存到本地为homebrew.sh</p>
+<p>然后使用 bash  homebrew.sh安装</p>
+<p>安装完成</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gqbvwj2vnij316w0u046w.jpg" alt="image-20210508203942307"></p>
+<p>之前可能是网络问题，用这种方式安装挺顺利的。</p>
+<h3 id="试试安装wget"><a href="#试试安装wget" class="headerlink" title="试试安装wget"></a>试试安装wget</h3><p>命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install wget</span><br></pre></td></tr></table></figure>
+<p>顺利安装：</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gqbb0s5sdyj317d0u0k0n.jpg" alt="image-20210508204347203"></p>
+<h3 id="参考链接："><a href="#参考链接：" class="headerlink" title="参考链接："></a>参考链接：</h3><p><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000014992947">https://segmentfault.com/a/1190000014992947</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/106791346">https://zhuanlan.zhihu.com/p/106791346</a></p>
+<p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1684785">https://cloud.tencent.com/developer/article/1684785</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.zrahh.com/archives/167.html">https://www.zrahh.com/archives/167.html</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/06/Github-Page-%E5%8F%91%E8%A1%A8%E6%96%87%E7%AB%A0%E7%9A%84%E6%B5%81%E7%A8%8B/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -170,7 +276,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-05-06 11:31:28 / Modified: 12:15:28" itemprop="dateCreated datePublished" datetime="2021-05-06T11:31:28+08:00">2021-05-06</time>
+              <time title="Created: 2021-05-06 11:31:28 / Modified: 12:21:42" itemprop="dateCreated datePublished" datetime="2021-05-06T11:31:28+08:00">2021-05-06</time>
             </span>
 
           
@@ -397,7 +503,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-12-28 18:01:26" itemprop="dateModified" datetime="2020-12-28T18:01:26+08:00">2020-12-28</time>
+                <time title="Modified: 2020-12-28 18:01:16" itemprop="dateModified" datetime="2020-12-28T18:01:16+08:00">2020-12-28</time>
               </span>
 
           
@@ -539,7 +645,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-12-28 17:00:36" itemprop="dateModified" datetime="2020-12-28T17:00:36+08:00">2020-12-28</time>
+                <time title="Modified: 2020-12-28 17:00:35" itemprop="dateModified" datetime="2020-12-28T17:00:35+08:00">2020-12-28</time>
               </span>
 
           
@@ -710,7 +816,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-12-28 17:10:48" itemprop="dateModified" datetime="2020-12-28T17:10:48+08:00">2020-12-28</time>
+                <time title="Modified: 2020-12-28 17:10:47" itemprop="dateModified" datetime="2020-12-28T17:10:47+08:00">2020-12-28</time>
               </span>
 
           
@@ -810,7 +916,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-count">7</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
