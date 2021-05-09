@@ -145,6 +145,85 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/09/git-ssh-key-%E9%85%8D%E7%BD%AE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/05/09/git-ssh-key-%E9%85%8D%E7%BD%AE/" class="post-title-link" itemprop="url">git ssh key 配置</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-05-09 11:23:07 / Modified: 22:05:48" itemprop="dateCreated datePublished" datetime="2021-05-09T11:23:07+08:00">2021-05-09</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>今天在Mac 上面写文章然后上传到Github Page的时候遇到了这个问题：</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gqcizqt9bxj315i098dhw.jpg" alt="image-20210509112456620"></p>
+<p>原因应该是我的Mac 上面没有配置好GitHub的ssh key</p>
+<p>于是找了下教程，有如下文章：</p>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/f22d02c7d943">https://www.jianshu.com/p/f22d02c7d943</a></p>
+<p>按照文章内容配置：</p>
+<p>进入ssh文件夹：</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gqc0kkdmr6j310k04ydgn.jpg" alt="image-20210509112748453"></p>
+<p>生成ssh-key:</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gqc0mcl1jkj315m0o4n0o.jpg" alt="image-20210509112929248"></p>
+<p>有如下内容：</p>
+<p>Your identification has been saved in /Users/lecsven/.ssh/id_rsa.<br>Your public key has been saved in /Users/lecsven/.ssh/id_rsa.pub.</p>
+<p>可知秘钥保存位置</p>
+<p>打开id_rsa.pub，复制内容，粘贴到GitHub网站的配置里面：</p>
+<p>新建SSH key:</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gqcizxa6g0j31in0u046i.jpg" alt="image-20210509113633697"></p>
+<p>粘贴进去，点击保存：</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gqc0qf5jhrj31i10u0jz8.jpg" alt="image-20210509113321497"></p>
+<p>再试一次<code>git push origin hexo</code> :</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gqc0vh8lnnj315m0hmq74.jpg" alt="image-20210509113816290"></p>
+<p>成功！</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/09/Mac-%E5%91%BD%E4%BB%A4%E8%A1%8C%E9%85%8D%E7%BD%AE/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -916,7 +995,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-count">8</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
