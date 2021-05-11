@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
   <meta property="og:type" content="website">
@@ -195,23 +195,14 @@
 <p>原因应该是我的Mac 上面没有配置好GitHub的ssh key</p>
 <p>于是找了下教程，有如下文章：</p>
 <p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/f22d02c7d943">https://www.jianshu.com/p/f22d02c7d943</a></p>
-<p>按照文章内容配置：</p>
-<p>进入ssh文件夹：</p>
-<p><img src="https://i.loli.net/2021/05/10/TyAU8MxfYdjqQps.jpg" alt="image-20210509112748453"></p>
-<p>生成ssh-key:</p>
-<p><img src="https://i.loli.net/2021/05/10/LXJ96xdiBVmtluD.jpg" alt="image-20210509112929248"></p>
-<p>有如下内容：</p>
-<p>Your identification has been saved in /Users/lecsven/.ssh/id_rsa.<br>Your public key has been saved in /Users/lecsven/.ssh/id_rsa.pub.</p>
-<p>可知秘钥保存位置</p>
-<p>打开id_rsa.pub，复制内容，粘贴到GitHub网站的配置里面：</p>
-<p>新建SSH key:</p>
-<p><img src="https://i.loli.net/2021/05/10/vZfKVwW1NrLFeDp.jpg" alt="image-20210509113633697"></p>
-<p>粘贴进去，点击保存：</p>
-<p><img src="https://i.loli.net/2021/05/10/A7xPsrgHXZdU5IR.jpg" alt="image-20210509113321497"></p>
-<p>再试一次<code>git push origin hexo</code> :</p>
-<p><img src="https://i.loli.net/2021/05/10/45C3K8udvjpyUDa.jpg" alt="image-20210509113816290"></p>
-<p>成功！</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/05/09/git-ssh-key-%E9%85%8D%E7%BD%AE/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -275,49 +266,14 @@
 
 <p>如果想修改回默认dash，同样使用chsh命令即可：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chsh -s &#x2F;bin&#x2F;bash</span><br></pre></td></tr></table></figure>
-<h3 id="cat-命令"><a href="#cat-命令" class="headerlink" title="cat 命令"></a>cat 命令</h3><p><code>cat</code>可以直接获取配置文件的内容</p>
-<p><code>gitconfig</code> 文件的路径在~下面：</p>
-<p>可以直接显示git的配置文件：</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gqbvvwkhn4j31860iemzf.jpg" alt="image-20210508200511388"></p>
-<h3 id="安装-oh-my-zsh"><a href="#安装-oh-my-zsh" class="headerlink" title="安装 oh-my-zsh"></a>安装 oh-my-zsh</h3><p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gqba8kgp99j31kh0u0jz2.jpg" alt="image-20210508201638508"></p>
-<p>Curl 直接安装报错</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl: (35) LibreSSL SSL_connect: SSL_ERROR_SYSCALL in connection to raw.githubusercontent.com:443</span><br></pre></td></tr></table></figure>
-<p>找到这个教程：</p>
-<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/b1de316fc3fc">https://www.jianshu.com/p/b1de316fc3fc</a></p>
-<p>可以把sh文件下载然后本地安装</p>
-<p>首先打开：<a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh">https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh</a></p>
-<p>可以看到内容，证明连接没问题</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gqbvw4lemlj318z0u0qii.jpg" alt="image-20210508201944740"></p>
-<p>直接保存文件为install.sh</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gqbvw9k0ldj30gs0k014w.jpg" alt="image-20210508202020881"></p>
-<p>切换到下载文件的路径，然后运行<code>bash install.sh</code></p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gqbad3gdebj317x0u0n3x.jpg" alt="image-20210508202101065"></p>
-<p>搞定！</p>
-<p>另一方法是更换国内源，没测试，可供参考：</p>
-<p><a target="_blank" rel="noopener" href="https://www.codenong.com/cs109529180/">https://www.codenong.com/cs109529180/</a></p>
-<h3 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h3><h4 id="关于autojump"><a href="#关于autojump" class="headerlink" title="关于autojump"></a>关于autojump</h4><p>参考链接：</p>
-<p><a target="_blank" rel="noopener" href="https://yuweiguocn.github.io/command-line-autojump/">https://yuweiguocn.github.io/command-line-autojump/</a></p>
-<h4 id="安装Powerline"><a href="#安装Powerline" class="headerlink" title="安装Powerline"></a>安装Powerline</h4><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install powerline-status</span><br></pre></td></tr></table></figure>
-
-
-<h4 id="关于Powerline-乱码"><a href="#关于Powerline-乱码" class="headerlink" title="关于Powerline 乱码"></a>关于Powerline 乱码</h4><p>如下设置：</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gqbhc6qg0ej31f60qewoc.jpg" alt="image-20210509002220991"></p>
-<p>参考链接：<a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1612798">https://cloud.tencent.com/developer/article/1612798</a></p>
-<h3 id="Home-brew-安装"><a href="#Home-brew-安装" class="headerlink" title="Home brew 安装"></a>Home brew 安装</h3><p>和安装oh-my-zsh同理</p>
-<p>先把sh文件保存到本地为homebrew.sh</p>
-<p>然后使用 bash  homebrew.sh安装</p>
-<p>安装完成</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gqbvwj2vnij316w0u046w.jpg" alt="image-20210508203942307"></p>
-<p>之前可能是网络问题，用这种方式安装挺顺利的。</p>
-<h3 id="试试安装wget"><a href="#试试安装wget" class="headerlink" title="试试安装wget"></a>试试安装wget</h3><p>命令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install wget</span><br></pre></td></tr></table></figure>
-<p>顺利安装：</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gqbb0s5sdyj317d0u0k0n.jpg" alt="image-20210508204347203"></p>
-<h3 id="参考链接："><a href="#参考链接：" class="headerlink" title="参考链接："></a>参考链接：</h3><p><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000014992947">https://segmentfault.com/a/1190000014992947</a></p>
-<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/106791346">https://zhuanlan.zhihu.com/p/106791346</a></p>
-<p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1684785">https://cloud.tencent.com/developer/article/1684785</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.zrahh.com/archives/167.html">https://www.zrahh.com/archives/167.html</a></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/05/09/Mac-%E5%91%BD%E4%BB%A4%E8%A1%8C%E9%85%8D%E7%BD%AE/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -380,43 +336,14 @@
 <p><img src="https://i.loli.net/2021/05/06/5jFrd8B7tsfP2n3.png" alt="image-20210506112733590"></p>
 <p>输入<code>hexo new post &quot;文章名字&quot;</code>，注意文章名的双引号得确认是英文输入的。</p>
 <p><img src="https://i.loli.net/2021/05/06/WUcqxfioGaAgdDh.png" alt="image-20210506113308742"></p>
-<p>然后在<code>H:\Dropbox\all-blog\lecsven.github.io\source\_posts\</code>打开md文件</p>
-<p><img src="https://i.loli.net/2021/05/06/i7ESWrf4mDJGLqb.png" alt="image-20210506113837848"></p>
-<p>开始写文章</p>
-<p><img src="https://i.loli.net/2021/05/06/JuD9SfgqAlsKUxZ.png" alt="image-20210506114034412"></p>
-<p>完成之后按照以下顺序操作：</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git status <span class="comment"># 查看 git 仓库的变化</span></span><br><span class="line">git add . <span class="comment"># 添加全部修改到寄存区</span></span><br><span class="line">git commit <span class="literal">-m</span> <span class="string">&#x27;changed&#x27;</span> <span class="comment"># 提交</span></span><br><span class="line">git push origin hexo <span class="comment"># 推送到远程仓库的 hexo 分支</span></span><br></pre></td></tr></table></figure>
-<p>操作完成：</p>
-<p><img src="https://i.loli.net/2021/05/06/eDSvjJhQpk35Ngu.png" alt="image-20210506114346103"></p>
-<p>打开<code>https://github.com/lecsven/lecsven.github.io</code>查看状态</p>
-<p><img src="https://i.loli.net/2021/05/06/5xFVDezwglsQT6f.png" alt="image-20210506114555327"></p>
-<p>确认静态文件已经正确上传：</p>
-<p><img src="https://i.loli.net/2021/05/06/wfSCbmg5dEuhTol.png" alt="image-20210506114652456"></p>
-<p><strong>接下来部署静态文件，使得内容可以在网页上面正常显示</strong></p>
-<p>在<code>H:\Dropbox\all-blog\lecsven.github.io</code>文件夹下面的<code>_config.yml</code>里面</p>
-<p>确保如下设置：</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repository:</span> <span class="string">https://github.com/lecsven/lecsven.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
-<p><code>  branch: master</code>能够让部署的文件直接上传到<code>master</code>分支</p>
-<p>开始部署：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hexo clean # 清理缓存</span><br><span class="line">hexo g # 生成静态文件</span><br><span class="line">hexo s # 本地预览</span><br><span class="line">hexo d # 部署（跟 _config.yml 文件中的 deploy 选项相关）</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>本地预览：</p>
-<p><img src="https://i.loli.net/2021/05/06/lmDcVPaQwBWNSTH.png" alt="image-20210506120027729"></p>
-<p>部署完成：</p>
-<p><img src="https://i.loli.net/2021/05/06/uYSh3AQIrTmP7tC.png" alt="image-20210506120131026"></p>
-<p>打开master分支确保最新的文件已更新</p>
-<p><img src="https://i.loli.net/2021/05/06/nFQZgJ15vwRctki.png" alt="image-20210506120254668"></p>
-<p>在Github Page 查看下效果：</p>
-<p><img src="https://i.loli.net/2021/05/06/q5diXnsH7RAz2C4.png" alt="image-20210506120535125"></p>
-<p>大功告成！</p>
-<p>以上就是发表Github Page 的常用操作，做个备忘。</p>
-<p>参考文章：</p>
-<blockquote>
-<p><a target="_blank" rel="noopener" href="https://www.sulinehk.com/post/hexo-backup-reset/">https://www.sulinehk.com/post/hexo-backup-reset/</a></p>
-<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/127027266">https://zhuanlan.zhihu.com/p/127027266</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/ljy2013/p/5547993.html">https://www.cnblogs.com/ljy2013/p/5547993.html</a></p>
-<p><a target="_blank" rel="noopener" href="https://lvraikkonen.github.io/2016/05/31/%E5%88%A9%E7%94%A8Github%E5%88%86%E6%94%AF%E5%A4%87%E4%BB%BDHexo%E6%BA%90%E6%96%87%E4%BB%B6/">https://lvraikkonen.github.io/2016/05/31/%E5%88%A9%E7%94%A8Github%E5%88%86%E6%94%AF%E5%A4%87%E4%BB%BDHexo%E6%BA%90%E6%96%87%E4%BB%B6/</a></p>
-</blockquote>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/05/06/Github-Page-%E5%8F%91%E8%A1%A8%E6%96%87%E7%AB%A0%E7%9A%84%E6%B5%81%E7%A8%8B/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -484,68 +411,15 @@
 <p>笑来老师自己提供的作品页在这里：<a target="_blank" rel="noopener" href="http://lixiaolai.com/#/">http://lixiaolai.com/#/</a></p>
 <hr>
 <p><strong>首先是笑来自己提供的作品列表：</strong></p>
-<h1 id="李笑来作品集"><a href="#李笑来作品集" class="headerlink" title="李笑来作品集"></a>李笑来作品集</h1><p>——人生的尴尬在于之前决策的时候并不可能有之后那么丰富的经验……</p>
-<h2 id="文字作品"><a href="#文字作品" class="headerlink" title="文字作品"></a>文字作品</h2><h3 id="出版书籍"><a href="#出版书籍" class="headerlink" title="出版书籍"></a><strong>出版书籍</strong></h3><blockquote>
-<ul>
-<li>TOEFL 核心词汇21天突破</li>
-<li><a target="_blank" rel="noopener" href="http://lixiaolai.com/#/twe185/">TOEFL 高分作文</a></li>
-<li><a target="_blank" rel="noopener" href="http://lixiaolai.com/#/befriending-time/">把时间当作朋友</a></li>
-<li><a target="_blank" rel="noopener" href="https://xue.cn/hub/app/books/56">通往财富自由之路</a></li>
-<li>韭菜的自我修养（<a target="_blank" rel="noopener" href="http://lixiaolai.com/#/the-self-cultivation-of-leeks/cn/">中文</a>·<a target="_blank" rel="noopener" href="http://lixiaolai.com/#/the-self-cultivation-of-leeks/en/">English</a>）</li>
-<li><a target="_blank" rel="noopener" href="http://lixiaolai.com/#/the-craft-of-selfteaching/">自学是门手艺</a></li>
-<li>定投改变命运</li>
-</ul>
-</blockquote>
-<h3 id="开源书籍及其他文章"><a href="#开源书籍及其他文章" class="headerlink" title="开源书籍及其他文章"></a><strong>开源书籍及其他文章</strong></h3><blockquote>
-<ul>
-<li><a target="_blank" rel="noopener" href="http://lixiaolai.com/#/i-have-a-say/">我也有话要说</a></li>
-<li><a target="_blank" rel="noopener" href="http://lixiaolai.com/#/everyone-can-use-english/">人人都能用英语</a></li>
-<li><a target="_blank" rel="noopener" href="https://xue.cn/hub/app/books/53">如何写好英文书面比较句</a></li>
-<li><a target="_blank" rel="noopener" href="http://lixiaolai.com/#/ji/">挤挤都会有的——写给女生的性高潮指南</a></li>
-<li><a target="_blank" rel="noopener" href="https://github.com/xiaolai/zuoxiangqicheng">坐享其成</a></li>
-<li>INBlockchain 开源投资原则（<a target="_blank" rel="noopener" href="http://lixiaolai.com/#/inb-principles/cn/">中文</a>·<a target="_blank" rel="noopener" href="http://lixiaolai.com/#/inb-principles/en/">English</a>)</li>
-<li><a target="_blank" rel="noopener" href="http://lixiaolai.com/#/bitcoin-whitepaper-cn-en-translation/Bitcoin-Whitepaper-EN-CN.html">Bitcoin 白皮书（中英对照）</a></li>
-<li><a target="_blank" rel="noopener" href="https://onregularinvesting.com/">定投改变命运（第三版）</a></li>
-<li><a target="_blank" rel="noopener" href="https://blockchainlittlebook.com/">区块链小白书</a></li>
-<li><a target="_blank" rel="noopener" href="https://github.com/xiaolai/help-to-be-helped">如何自救——助人即助己——重大病毒性疫情中如何应对创伤应激障碍</a></li>
-</ul>
-</blockquote>
-<h3 id="投资项目"><a href="#投资项目" class="headerlink" title="投资项目"></a><strong>投资项目</strong></h3><blockquote>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://inblockchain.com/">Inblockchain</a></li>
-<li><a target="_blank" rel="noopener" href="https://longmen.fund/">龙门基金</a></li>
-<li><a target="_blank" rel="noopener" href="https://big.one/">BigOne</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.btcmex.com/">BTCmex</a></li>
-<li><a target="_blank" rel="noopener" href="https://poolin.com/">币印</a></li>
-<li><a target="_blank" rel="noopener" href="https://sia.tech/">SIA</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.mobilecoin.com/">MOB</a></li>
-<li><a target="_blank" rel="noopener" href="https://mixin.one/">Mixin Network</a></li>
-<li><a target="_blank" rel="noopener" href="https://fox.one/">FoxOne</a></li>
-<li><a target="_blank" rel="noopener" href="https://b.watch/">b.watch</a></li>
-<li><a target="_blank" rel="noopener" href="https://xue.cn/">xue.cn</a></li>
-</ul>
-</blockquote>
-<h3 id="微信视频号”笑来“中的往期内容"><a href="#微信视频号”笑来“中的往期内容" class="headerlink" title="微信视频号”笑来“中的往期内容"></a>微信视频号”笑来“中的往期内容</h3><p>请在微信中搜索并关注微信视频号：”笑来“，或直接微信识别以下二维码关注……</p>
-<p><strong>识别以下二维码查看往期视频号内容精选……</strong></p>
-<p><img src="https://i.loli.net/2021/05/06/VHePtUG7mIhB9cy.png" alt="img"></p>
-<hr>
-<p><strong>以下是我添加的其他链接：</strong></p>
-<h3 id="未出版资料"><a href="#未出版资料" class="headerlink" title="未出版资料"></a>未出版资料</h3><blockquote>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://github.com/xiaolai/everyones-guide-for-starting-up-on-wechat-network">微信互联网平民创业（初稿）</a></li>
-<li><a target="_blank" rel="noopener" href="http://xiaolai.co/search">笑来搜</a></li>
-<li><a target="_blank" rel="noopener" href="https://web.archive.org/web/20170514014104/http://lixiaolai.com/">李笑来旧网站（2017）</a></li>
-<li><a target="_blank" rel="noopener" href="https://web.archive.org/web/20170120155015/https://lixiaolai.com/">李笑来旧网站（2016）</a></li>
-<li><a target="_blank" rel="noopener" href="https://web.archive.org/web/20150706211508/http://xiaolai.li/">李笑来旧网站（2015）</a></li>
-<li><a target="_blank" rel="noopener" href="https://web.archive.org/web/20130612153611/https://lixiaolai.com/">李笑来旧网站（2013）</a></li>
-<li><a target="_blank" rel="noopener" href="https://web.archive.org/web/20130705122633/http://wordpress.lixiaolai.com/">Reborn</a></li>
-</ul>
-</blockquote>
-<h3 id="笑来的社交账号"><a href="#笑来的社交账号" class="headerlink" title="笑来的社交账号"></a>笑来的社交账号</h3><blockquote>
-<p><a target="_blank" rel="noopener" href="https://twitter.com/xiaolai">Twitter</a></p>
-<p><a target="_blank" rel="noopener" href="https://weibo.com/bylixiaolai">微博</a></p>
-</blockquote>
-
+<h1 id="李笑来作品集"><a href="#李笑来作品集" class="headerlink" title="李笑来作品集"></a>李笑来作品集</h1>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/05/06/%E6%9D%8E%E7%AC%91%E6%9D%A5%E4%BD%9C%E5%93%81%E9%9B%86/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -614,80 +488,14 @@
 <p>用<strong>Hexo</strong>框架，可以使用<strong>Markdown</strong>来写文章，然后上传到<strong>github</strong>上面，网页就会自动更新了。</p>
 <p>下面简单记录下流程，当作备忘。</p>
 <p>首先安装node.js，安装npm，安装git ，具体教程网上很多，这里就不赘述了。</p>
-<p>以下命令可以查看版本：</p>
-<p><img src="https://i.loli.net/2020/12/25/jgckiJfD5PbXYZp.png" alt="image-20201225105608896"></p>
-<p>注册Github 账号，然后新建New repository:</p>
-<p><img src="https://i.loli.net/2020/12/25/VToPhwgEHCl8pNL.png" alt="image-20201225105642727"></p>
-<p>名字以<code>github.io</code>结尾</p>
-<p><img src="https://i.loli.net/2020/12/25/7ofFlhUX2JyTazG.png" alt="image-20201225105807410"></p>
-<p>创建完：</p>
-<p><img src="https://i.loli.net/2020/12/25/epaYKv7q6WCxAiz.png" alt="image-20201225110029160"></p>
-<p>设置主题：</p>
-<p><img src="https://i.loli.net/2020/12/25/G9w52KSBkbFtOJo.png" alt="image-20201225110614663"></p>
-<p><img src="https://i.loli.net/2020/12/25/iaE7fUOgDyhvHPY.png" alt="image-20201225110809768"></p>
-<p>选择一个喜欢的主题：</p>
-<p><img src="https://i.loli.net/2020/12/25/lPTmiVxBpkJudYU.png" alt="image-20201225122439852"></p>
-<p>打开网页如此显示：</p>
-<p><img src="https://i.loli.net/2020/12/28/ptTkyvhinoHqmfK.png" alt="image-20201225134340815"></p>
-<h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><p>我在电脑上面新建一个文件夹<strong>blog</strong>，路径在：H:\Dropbox\blog</p>
-<p>右键Git bash here，打开git窗口</p>
-<p>输入<code>npm i hexo-cli -g</code>安装Hexo</p>
-<p><img src="https://i.loli.net/2020/12/25/t9Zusx7LrnPQBcX.png" alt="image-20201225122832550"></p>
-<p><code>hexo -v</code>查看hexo是否安装成功</p>
-<p><img src="https://i.loli.net/2020/12/25/X7grCTLe6NhJxZm.png" alt="image-20201225122856499"></p>
-<p>输入<code>hexo init</code>初始化文件夹</p>
-<p><img src="https://i.loli.net/2020/12/25/9Vwl1EhvWQjGBgf.png" alt="image-20201225122929375"></p>
-<p><code>npm install</code>安装必备的组件</p>
-<p><img src="https://i.loli.net/2020/12/25/2Tb7eE4G5RmgXsa.png" alt="image-20201225122950017"></p>
-<p>添加自己的文章到H:\Dropbox\blog\source_posts路径下面：</p>
-<p>在H:\Dropbox\blog\source_posts下面是这样的：</p>
-<p><img src="https://i.loli.net/2020/12/25/OYKMudlpfcDtBVs.png" alt="image-20201225123318427"></p>
-<p><code>hexo g</code>生成静态网页</p>
-<p><img src="https://i.loli.net/2020/12/25/d7uZKYHX4iroejg.png" alt="image-20201225123036565"></p>
-<p><code>hexo s</code>打开本地服务器</p>
-<p><img src="https://i.loli.net/2020/12/25/pFyqgwkudNVEPGa.png" alt="image-20201225123056279"></p>
-<p>刷新一下<a target="_blank" rel="noopener" href="http://localhost:4000/%E9%A1%B5%E9%9D%A2%EF%BC%9A">http://localhost:4000/页面：</a></p>
-<p>把我们自己的文章显示在页面上了。</p>
-<p><img src="https://i.loli.net/2020/12/25/wWECVoX1NBSFxfn.png" alt="image-20201225123354344"></p>
-<p>接下来就把文章上传到github上面</p>
-<p>按<code>ctrl+c</code>关闭本地服务器。</p>
-<p>设置Github的<code>user.name</code>和<code>user.email</code>，这个是必须的。</p>
-<p><img src="https://i.loli.net/2020/12/25/6SC25pZQ4UxGoyV.png" alt="image-20201225125017698"></p>
-<p>生成密钥SSH key：</p>
-<p><img src="https://i.loli.net/2020/12/25/ufi6tgxVHYJEa7O.png" alt="image-20201225124939610"></p>
-<p>获取密钥：</p>
-<p><img src="https://i.loli.net/2020/12/25/h3PMEpYQ2KTC9wo.png" alt="image-20201225125548986"></p>
-<p>可以在本地查看到这个密钥：</p>
-<p><img src="https://i.loli.net/2020/12/25/zZ8rS7FNBLh3Alf.png" alt="image-20201225124840290"></p>
-<p>打开后这样显示：</p>
-<p>与上面的显示的密钥是一样的。</p>
-<p><img src="https://i.loli.net/2020/12/25/sQnTXBN4CDKgkoW.png" alt="image-20201225125107397"></p>
-<p>打开github.com，选择<code>Setting</code> </p>
-<p><img src="https://i.loli.net/2020/12/28/aK9GBX8FWTUMrDs.png" alt="image-20201228174208392"></p>
-<p>左边选择<code>SSH and GPG keys</code> ，然后右上角选择<code>New SSH key</code></p>
-<p><img src="https://i.loli.net/2020/12/28/bdEiYuNKlUGqBTM.png" alt="image-20201228174436585"></p>
-<p>新建一个SSH keys，名字随便。</p>
-<p><img src="https://i.loli.net/2020/12/25/ye8k9cWlpHXsVON.png" alt="image-20201225125220715"></p>
-<p>创建完了：</p>
-<p><img src="https://i.loli.net/2020/12/25/41XCTv65RD28txy.png" alt="image-20201225125349110"></p>
-<p>测试一下，输入<code>ssh -T git@github.com</code></p>
-<p><img src="https://i.loli.net/2020/12/25/i8N4Jr2a7TeUxcA.png" alt="image-20201225125754236"></p>
-<p>成功了。</p>
-<p><code>_config.yml</code>文件最后一行：</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: https://github.com/lecsven/practice.github.io</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-<p>repository修改为你自己的github项目地址。</p>
-<p><img src="https://i.loli.net/2020/12/25/6iGr9MYIDfu5FxH.png" alt="image-20201225130823965"></p>
-<p><img src="https://i.loli.net/2020/12/25/4m7yCfHxEjlFLPv.png" alt="image-20201225131029315"></p>
-<p>会发现H:\Dropbox\blog\source_posts多了个文件：new-article.md</p>
-<p>在文件里面修改好文字。</p>
-<p>然后<code>hexo g</code>生成静态网页，<code>hexo s</code>可以本地预览效果：</p>
-<p><img src="https://i.loli.net/2020/12/25/ePk9LEOMmAoJ5Cy.png" alt="image-20201225131306647"></p>
-<p>最后输入<code>hexo d</code>上传到github上，会需要输入用户名和密码，密码可能是弹出的窗口。</p>
-<p><img src="https://i.loli.net/2020/12/25/6lkbvyM4sTQiupt.png" alt="image-20201225131820271"></p>
-<p>好了，能够在网页上看到更新后的文章了。</p>
-<p><img src="https://i.loli.net/2020/12/28/fL4p2UCxWIyFrwZ.png" alt="image-20201228180051775"></p>
-<p>这是一个比较不错的文章备份仓库。可以自由修改，更改主题，不断折腾新的功能。还有很多新的功能下次继续聊。</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/12/25/%E7%94%A8Github%20Pages%20%E5%8F%91%E8%A1%A8%E6%96%87%E7%AB%A0/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -756,77 +564,14 @@
 <p>但是，即便如此，作为一个喜欢折腾电子书的人，各种App我都使用过。最后还是认为多看书城的书排版是最好的。图文并茂，而且图片可以用两指缩小放大，可以看清楚很多图片的细节。文字间距的调整也很舒适。总之，用久了，已经习惯了，已经离不开了。</p>
 <p>有时候，想要看的图书资源书库里面没有，我也就在其他书城里面看下。</p>
 <p>如果连其他书城也没有，那我只能自己去查找，然后导入多看App，最终还是在多看里面阅读。</p>
-<p>在我看来，即使只把多看App 当做一个<strong>离线阅读器</strong>，只阅读<strong>本地书</strong>，它的体验也是很优秀的。</p>
-<p>不过多看有一个缺点，很多通用格式的epub电子书，里面的图片在多看App里面是不能放大的。</p>
-<p>我最近在学习Python，很多教程的图片，如果不放大，那么是看不清代码的细节的。</p>
-<p>于是，只能去查找教程，修改一下epub文件的图片排版。</p>
-<p>下面我把我的折腾过程，写一下：</p>
-<p>这是我下载的一本电子书，图片不能直接点击放大，在需要看清细节的时候很不方便。</p>
-<p>所以，只能自己用Sigil修改下。</p>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwgy1glealmhpxsj30n01dsh2p.jpg"><br>关于<strong>Sigil:</strong></p>
-<blockquote>
-<p><strong>Sigil</strong>是一款<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/EPUB">EPUB</a><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E9%9B%BB%E5%AD%90%E6%9B%B8">电子书</a>制作软件及<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%BC%80%E6%BA%90%E8%BD%AF%E4%BB%B6">开源</a>EPUB电子书编辑器，支援<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Windows">Windows</a>、<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Linux">Linux</a>和<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Mac">Mac</a>系统。Sigil使用<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/CSS">CSS</a>和<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/HTML">HTML</a>格式，拥有<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%89%80%E8%A6%8B%E5%8D%B3%E6%89%80%E5%BE%97">所见即所得</a>界面，并有自动生成目录、自动修正等功能。</p>
-</blockquote>
-<p>如果你对本地的电子书有排版上面的不满，Sigil绝对可以帮上你的忙。排版神器。</p>
-<p>但是刚开始可能要找个教程了解一下。</p>
-<p>网友Zecy有不错的教程：（Zecy分享的链接找不到了，这是B站上面的一个），入门Sigil很合适。</p>
-<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/av32221153/">https://www.bilibili.com/video/av32221153/</a></p>
-<p>打开图书后，在<strong>Sigil</strong>里面显示是这样的：</p>
-<p><img src="https://i.loli.net/2021/05/11/hXsurnepKLvxq9T.jpg" alt="Snipaste_2020-12-06_18-16-54"></p>
-<p>H:\Dropbox\0081Kckwgy1gleaz2l04cj31gw0u04qp.png</p>
-<p>我们要把图片修改成多看自带的<strong>交互图</strong>方式。</p>
-<p>交互图的介绍：</p>
-<blockquote>
-<p>交互图主要实现用户点击图像后，图像自动全屏显示，在全屏显示时图像可以两指放大和旋转。<br> 实现方法只需要加上duokan-image-single这个类即可。当然在CSS里也可以针对此类自定义样式。</p>
-</blockquote>
-<p>主要的代码：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;duokan-image-single&quot;&gt;</span><br><span class="line">    &lt;img src=&quot;../Images/pic.png&quot; alt=&quot;&quot; /&gt;</span><br><span class="line">    &lt;p class=&quot;duokan-image-maintitle&quot;&gt;主标题&lt;/p&gt;</span><br><span class="line">    &lt;p class=&quot;duokan-image-subtitle&quot;&gt;副标题&lt;/p&gt;</span><br><span class="line">&lt;/<span class="selector-tag">div</span>&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>既然要修改的是图片，就要找出电子书中图片出现的规律</p>
-<p>本书图片在Sigil里面显示是这样的：</p>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwgy1glectgfzwnj311006uacc.jpg"></p>
-<p>我们只需要保留最重要的<strong>图片路径</strong>以及<strong>图片描述</strong>就够了：</p>
-<p><code>&lt;img src=&quot;../Images/00003.jpeg&quot; </code>是图片路径</p>
-<p><code>&lt;h6 class=&quot;calibre26&quot;&gt;&lt;span class=&quot;keep-together&quot;&gt;Figure 2-3. &lt;/span&gt;Jupyter example view for an existing notebook&lt;/h6&gt;</code>是图片的描述，最重要的是其内容：<code>Figure 2-3. Jupyter example view for an existing notebook</code>，其他有关样式的东西其实可以舍弃。</p>
-<p>由于一个一个修改这种文本太过麻烦，我们使用<strong>正则表达式</strong>直接批量修改。</p>
-<p><strong>正则表达式</strong>绝对是你短时间内能学会然后就可以受用无穷的东西，关于<strong>查找</strong>、<strong>替换</strong>，很多复杂的需求都可以用简单的语句来表达。绝大多数常用的文本编辑器和IDE在搜索框里面都会提供<strong>正则</strong>搜索选项的。你学会之后，就可以一直与它为伴了。</p>
-<p>送你一个<strong>Sigil</strong>正则表达式入门教程：</p>
-<p><a target="_blank" rel="noopener" href="https://web.archive.org/web/20150906124319/http://anipv.info/blog/sigil-regexp-intro">https://web.archive.org/web/20150906124319/http://anipv.info/blog/sigil-regexp-intro</a></p>
-<p>这个也很不错：</p>
-<p><a target="_blank" rel="noopener" href="https://tieba.baidu.com/p/3493107610?fr=good">https://tieba.baidu.com/p/3493107610?fr=good</a></p>
-<p>这里不细讲。文章写的很具体，绝大多数常用电子书排版技巧都有涉及。有兴趣可以自行阅读。</p>
-<p>我们只讲我遇到的添加交互图代码的修改过程。</p>
-<p>由于涉及多行替换，我们得使用<code>(?s)</code></p>
-<blockquote>
-<p>(?s)放在表达式的最前端，使得“.”可以匹配到“\n”，从而实现跨行匹配。</p>
-<p>比如以下例子：</p>
-<p><code>&lt;div&gt;&lt;/div&gt;</code></p>
-<p><code>&lt;h1&gt;&lt;/h1&gt;</code></p>
-<p><code>&lt;div&gt;&lt;/div&gt;</code></p>
-<p>使用正则表达式<code>“&lt;div&gt;.*&lt;/div&gt;”</code>一次只能匹配到第一行或者第三行。</p>
-<p>而使用<code>“(?s)&lt;div&gt;.*&lt;/div&gt;”</code>则能一次性匹配到第一行到第三行所有内容。</p>
-</blockquote>
-<p><strong>查找语句</strong>：</p>
-<p><code>(?s)&lt;figure.*?&lt;img src=&quot;(.*?)&quot;.*?(Figure.*?)&lt;/span&gt;(.*?)&lt;/h6.*?&lt;/figure&gt;</code></p>
-<p><strong>替换语句：</strong></p>
-<p><code>&lt;div class=&quot;duokan-image-single&quot;&gt;\n&lt;img src=&quot;\1&quot; alt=&quot;&quot; /&gt;\n&lt;p class=&quot;duokan-image-subtitle&quot;&gt;\2\3&lt;/p&gt;\n&lt;/div&gt;</code></p>
-<p>查找语句中除了<code>(?s)</code>以外，3个<code>()</code>里面的内容是我们要保留的内容，其他的舍弃。</p>
-<p>替换语句中<code>\1\2\3</code>对应着上面3个<code>()</code>，把内容填入新的语句。</p>
-<p>这个时候<strong>Sigil</strong>搜索框显示是下面这样的，文字变蓝说明正则语句查找到了我们想要替换的语句。</p>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwgy1glee8p65ogj30u00vr154.jpg" alt="image-20201206201013373"></p>
-<p>如果选中所有HTML文件，然后选中<strong>计数所有</strong>，显示有70个匹配，与电子书中的图片数量匹配，说明这个查找语句可以适合本书所有图片。</p>
-<p> <img src="https://tva1.sinaimg.cn/large/0081Kckwgy1gleej2tp3qj30u00v113v.jpg" alt="image-20201206202013465"></p>
-<p>但是，我们还是只先替换一张图片，点击<strong>替换</strong></p>
-<p>替换之后是这样的：</p>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwgy1gleelxun9xj310u0f6adk.jpg" alt="image-20201206202257043"></p>
-<p>没问题，那就把其他的图片也替换了。</p>
-<p>导出电子书，在多看上面打开看看。</p>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwgy1gleesbp1jzj30n01dsn2e.jpg"></p>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwgy1glees7w65uj30n01dsk6o.jpg"></p>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwgy1glees2w787j30n01ds4qp.jpg"><br>图片可以放大了。完成。</p>
-<p>这个修改图片的方法我经常使用，但是过段时间不用又得找教程折腾一下，今天又用了一次，就把过程记录下来了。当作备忘吧.</p>
-<p>当然，得注意，这本书的格式肯定与其他书有很多不同，所以查找替换图片的语句不用直接拿去用，但是原理是类似的，只要弄懂了查找替换正则表达式的意义，稍微修改下，就能用了。</p>
-<p>有什么错误或者更好的方法，欢迎交流，谢谢！</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/12/07/%E5%A6%82%E4%BD%95%E8%AE%A9%E6%9C%AC%E5%9C%B0%E7%94%B5%E5%AD%90%E4%B9%A6%E5%9C%A8%E5%A4%9A%E7%9C%8BApp%E4%B8%8A%E9%9D%A2%E6%98%BE%E7%A4%BA%E4%BA%A4%E4%BA%92%E5%9B%BE/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -895,93 +640,14 @@
 <p>曾经我主要使用的浏览器是Firefox，那个时候Chrome羽翼未丰，很多插件都比较阳春，反观Firefox，经过多年积累，插件多且强大。但是Firefox过于臃肿，启动总是得等一会儿时间，而这个缺点一直没有大的改善，而安装插件必须重启浏览器这一点最让我受不了——当然，后来不用这样了（但是我已经离开了）。后来我逐渐意识到，其实在Firefox上很多我曾经很是依赖的插件，其实并没有那么重度使用，而在Chrome逐渐又找到了替代品。在插件逐渐让我满意的情况下，Chrome 简洁快速的优点才有了意义，让我一头扎进了Chrome的怀抱。</p>
 <p>使用Chrome很多年了，虽然有时候会对它有不满，但是，主要都是一些细节问题。最近，随着Microsoft Edge功能逐渐完善，很多人逐渐开始转投Edge阵营。Microsoft Edge基于<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Chromium">Chromium</a>开发，所以完全支持Chrome插件。改善了不少Chrome的缺点，又多了不少新的功能。于是，我也动摇了。</p>
 <p>不过以上这些，并不影响我继续使用我一直以来使用的Chrome插件。</p>
-<p>以下就聊一聊我常用的Chrome 插件。</p>
-<h3 id="SimpleUndoClose"><a href="#SimpleUndoClose" class="headerlink" title="SimpleUndoClose"></a><a target="_blank" rel="noopener" href="https://chrome.google.com/webstore/detail/simpleundoclose/emhohdghchmjepmigjojkehidlielknj">SimpleUndoClose</a></h3><p><strong>恢复标签页</strong></p>
-<p>有时候不小心把标签页关掉了，可以使用快捷键Ctrl+Shift+T马上恢复。更多的时候是想从关掉的最近几个标签里面选择恢复某个标签页，这个时候使用这个插件可以比较清楚地挑选。</p>
-<p><img src="https://i.loli.net/2020/09/29/t7TZrLGyqcA1Ngh.png" alt="image-20200924150702702"></p>
-<h3 id="SwitchyOmega"><a href="#SwitchyOmega" class="headerlink" title="SwitchyOmega"></a><a target="_blank" rel="noopener" href="https://chrome.google.com/webstore/detail/proxy-switchyomega/padekgcemlokbadohgkifijomclgjgif">SwitchyOmega</a></h3><p><strong>代理辅助软件</strong></p>
-<p>众所周知，国内的网络环境比较复杂，有时候访问国外网站需要挂上代理，这个插件可以比较方便的处理各种分流。国内的不走代理，国外的走代理。</p>
-<p><img src="https://i.loli.net/2020/09/29/5zDXAJe2UQvyBwj.png" alt="image-20200924155808293"></p>
-<h3 id="OneTab"><a href="#OneTab" class="headerlink" title="OneTab"></a><a target="_blank" rel="noopener" href="https://chrome.google.com/webstore/detail/onetab/chphlpgkkbolifaimnlloiipkdnihall">OneTab</a></h3><blockquote>
-<p><strong>节省高达95％的内存，并减轻标签页混乱现象</strong></p>
-</blockquote>
-<p>Chrome的内存占用特别大，这一点几乎是公认的。当你打开的标签页特别多的时候，可以一键把所有标签页都关掉，把所有链接集中到一个网页中，这样既省了内存，又能够在需要的时候把标签页一键恢复。</p>
-<p><img src="https://i.loli.net/2020/09/29/QwPZ5OrFSxAquLK.png" alt="image-20200924154430583"></p>
-<h3 id="Lastpass"><a href="#Lastpass" class="headerlink" title="Lastpass"></a><a target="_blank" rel="noopener" href="https://chrome.google.com/webstore/detail/lastpass-free-password-ma/hdokiejnpimakedhajhdlcegeplioahd">Lastpass</a></h3><p><strong>密码管理软件</strong></p>
-<p>现在使用网络产品太多了，有一大堆账号密码需要记住，如果使用太过简单的密码肯定不安全，但是太复杂的密码又容易遗忘。虽然网上又不少教程帮助我们如何设置一个强大的密码，然后根据不同网站来做修改就可以通用了。但是这个插件可以在我们减少记忆负担的情况下还可以快速地输入密码。何乐而不为。这个软件在很多主流浏览器上面都可以免费使用，手机端也可以同步。</p>
-<p><img src="https://i.loli.net/2020/09/29/YvaoqRLWzOn81KX.png" alt="image-20200924155523311"></p>
-<h3 id="Chrome-Better-History"><a href="#Chrome-Better-History" class="headerlink" title="Chrome Better History"></a><a target="_blank" rel="noopener" href="https://chrome.google.com/webstore/detail/chrome-better-history/aadbaagbanfijdnflkhepgjmhlpppbad">Chrome Better History</a></h3><blockquote>
-<p>Chrome Better History比Chrome默认的历史记录查看更好用。</p>
-</blockquote>
-<p>Chrome 自动的历史记录很不好用，这个插件可以让我们方便地根据日期选择某天的历史记录</p>
-<p><img src="https://i.loli.net/2020/09/29/beJ5aUvBNQYpXmW.png" alt="image-20200924155843920"></p>
-<h3 id="Adblock-Plus"><a href="#Adblock-Plus" class="headerlink" title="Adblock Plus"></a><a target="_blank" rel="noopener" href="https://chrome.google.com/webstore/detail/adblock-plus-free-ad-bloc/cfhdojbkjhnklbpkdaibdccddilifddb">Adblock Plus</a></h3><blockquote>
-<p><strong>免费的广告拦截器</strong></p>
-</blockquote>
-<p>相信不用过多介绍了，必装的广告拦截插件</p>
-<p>现在如果不使用广告拦截插件，很多网页的广告会让人眼花缭乱的，用了之后，世界清静了。</p>
-<p><img src="https://i.loli.net/2020/09/29/6dlznofbGwFm5qi.png" alt="image-20200924155934244"></p>
-<h3 id="Imagus"><a href="#Imagus" class="headerlink" title="Imagus"></a><a target="_blank" rel="noopener" href="https://chrome.google.com/webstore/detail/imagus/immpkjjlgappgfkkfieppnmlhakdmaab?hl=zh-CN">Imagus</a></h3><p>鼠标指针悬停在图片上面时会自动把图片放大。这样就可以快速预览图片，而不用把图片在另一个窗口打开。</p>
-<p>这个插件几乎是必备的。可以节省很多打开图片的时间。</p>
-<p>国内的360等浏览器都有内置类似的功能。Chrome当然也应该有。</p>
-<p><img src="https://i.loli.net/2020/09/29/3mSijLBfPuO8lN7.png" alt="image-20200924160943370"></p>
-<h3 id="Extensity"><a href="#Extensity" class="headerlink" title="Extensity"></a><a target="_blank" rel="noopener" href="https://chrome.google.com/webstore/detail/extensity/jjmflmamggggndanpgfnpelongoepncg">Extensity</a></h3><p><strong>Chrome插件管理</strong></p>
-<p>使用<strong>Chrome</strong>久了后，插件会越来越多，浏览器也会变得臃肿。其实有些插件只是偶尔用一些，但是我们又不舍得删除掉，每次去扩展程序菜单里面选择又太麻烦。这个时候，<strong>Extensity</strong>这个插件可就帮了大忙了，可以马上切换，在暂时不需要的插件上面一点，变灰了后，就暂时关闭了，等到需要的时候再点一次，就恢复正常。很方便。<strong>支持搜索</strong>，输入关键词可以找到插件。</p>
-<p>有时候我们需要测试一下浏览器的某个问题是插件导致的，还是网页本身的问题。这个时候，可以一键把正在使用的插件全部关闭，测试完了后，再一键把刚才原来已经启用的插件恢复——不会把原来没启用的插件恢复，别担心。</p>
-<p><img src="https://i.loli.net/2020/09/29/MF1cUTpgb4oe7Sj.png" alt="image-20200924144938170"></p>
-<h3 id="Video-Speed-Controller"><a href="#Video-Speed-Controller" class="headerlink" title="Video Speed Controller"></a><a target="_blank" rel="noopener" href="https://chrome.google.com/webstore/detail/video-speed-controller/nffaoalbilbmmfgbnbgppjihopabppdk">Video Speed Controller</a></h3><p>可以在支持HTML 5的视频网站上面设置倍速播放。</p>
-<p>B站，Youtube 和Netflix 都是支持的。</p>
-<p><img src="https://i.loli.net/2020/09/29/NK5sDfCjtdV7o8a.png" alt="image-20200924162713674"></p>
-<h3 id="批量下载助手"><a href="#批量下载助手" class="headerlink" title="批量下载助手"></a><a target="_blank" rel="noopener" href="https://chrome.google.com/webstore/detail/%E6%89%B9%E9%87%8F%E4%B8%8B%E8%BD%BD%E5%8A%A9%E6%89%8B/lkbekdmaneeogjhmlkelbgphpdoehilb">批量下载助手</a></h3><p>这个插件很久没有更新了，但是不影响使用</p>
-<p>我用的比较多的是批量获取磁链功能</p>
-<p>可以嗅探到网页中的所有链接，一次性获取，然后就可以使用工具批量下载了。</p>
-<h3 id="下载"><a href="#下载" class="headerlink" title="下载+"></a><a target="_blank" rel="noopener" href="https://chrome.google.com/webstore/detail/download-plus/gokgophibdidjjpildcdbfpmcahilaaf">下载+</a></h3><p>Chrome 自带的下载管理太弱了，这个可以增强一下</p>
-<p>点击后可以不用离开当前页面，查看最近下载的资源，可调用资源管理器打开</p>
-<p><img src="https://i.loli.net/2020/09/29/ojYZfWEv2NJgLU6.png" alt="image-20200924150850438"></p>
-<h3 id="Tampermonkey"><a href="#Tampermonkey" class="headerlink" title="Tampermonkey"></a><a target="_blank" rel="noopener" href="https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo">Tampermonkey</a></h3><p>强大的脚本管理器</p>
-<p>可以搜索下<strong>tampermonkey脚本</strong>，可找到很多强大的脚本，增强浏览器体验。</p>
-<p>如百度下载助手、京东自营过滤、微博过滤</p>
-<p><img src="https://i.loli.net/2020/09/29/G2ylLFHPvwcu5XW.png" alt="image-20200924151608087"></p>
-<h3 id="二维码生成器-Quick-QR"><a href="#二维码生成器-Quick-QR" class="headerlink" title="二维码生成器 (Quick QR)"></a><a target="_blank" rel="noopener" href="https://chrome.google.com/webstore/detail/quick-qr-code-generator/afpbjjgbdimpioenaedcjgkaigggcdpp">二维码生成器 (Quick QR)</a></h3><p>直接引用说明吧：</p>
-<blockquote>
-<p>Chrome上好评率最高的二维码生成器：可以方便地把当前页面转化成二维码，也可以把网页上任何文本或链接，甚至是您输入的任意内容都转化成二维码</p>
-</blockquote>
-<p>可以把网页链接输出为二维码，手机扫码后可以直接打开，省去了把链接发送到手机的步骤。</p>
-<p>在公众号上面不支持外链的情况下，把链接变成二维码也方便读者扫描打开。</p>
-<p><img src="https://i.loli.net/2020/09/29/cuo7tXZzEs43b2m.png" alt="image-20200924160032698"></p>
-<h3 id="Evernote-Web-Clipper"><a href="#Evernote-Web-Clipper" class="headerlink" title="Evernote Web Clipper"></a><a target="_blank" rel="noopener" href="https://chrome.google.com/webstore/detail/evernote-web-clipper/pioclpoplcdbaefihamjohnefbikjilc">Evernote Web Clipper</a></h3><p>把觉得有用的网页保存的Evernote里面，方便以后随时查看。</p>
-<p>提取网页功能很强大。可以调整截取的范围。</p>
-<p>有一些文章很让人受益匪浅，觉得过后可能会用到，又担心以后会消失的话，就可以一键保存，安枕无忧。</p>
-<p>我曾经就在原网页已经消失的情况下，在Evernote中找到了我之前保存的内容，庆幸不已。</p>
-<p><img src="https://i.loli.net/2020/09/29/w8jrm9LPvGBREJe.png" alt="image-20200924152534402"></p>
-<h3 id="Saladict-沙拉查词"><a href="#Saladict-沙拉查词" class="headerlink" title="Saladict 沙拉查词"></a><a target="_blank" rel="noopener" href="https://saladict.crimx.com/">Saladict 沙拉查词</a></h3><p>浏览各种网页，总会遇到不认识的单词，有个趁手的翻译工具是一件很让人开心的事情。</p>
-<p>用过不少软件，最终留下的就是<strong>沙拉查词</strong>，够用了。</p>
-<p>功能强大，可以设置很多词典。划词快速，可以马上看到单词的解释。</p>
-<p><img src="https://i.loli.net/2020/09/29/BIXCugKeivS7FyE.png" alt="image-20200924152730418"></p>
-<h3 id="NflxMultiSubs-Netflix-Multi-Subtitles"><a href="#NflxMultiSubs-Netflix-Multi-Subtitles" class="headerlink" title="NflxMultiSubs (Netflix Multi. Subtitles)"></a><a target="_blank" rel="noopener" href="https://chrome.google.com/webstore/detail/nflxmultisubs-netflix-mul/pjhnilfooknlkdonmjnleaomamfehkli">NflxMultiSubs (Netflix Multi. Subtitles)</a></h3><p>使用Netflix看剧的时候，如果需要同时显示中英文，通过这个插件就可以做到。</p>
-<p>比较小众吧。</p>
-<p><img src="https://i.loli.net/2020/09/29/Th7lQr9PWmZOtjU.png" alt="image-20200924153303396"></p>
-<h3 id="Stylus"><a href="#Stylus" class="headerlink" title="Stylus"></a><a target="_blank" rel="noopener" href="https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne">Stylus</a></h3><p>可以定制常用的网页，设置主题和皮肤。</p>
-<p>比如把知乎变成暗黑模式，或者设置成扁平模式都可以。</p>
-<p>可以去以下网站查找喜欢的样式：<a target="_blank" rel="noopener" href="https://userstyles.org/">https://userstyles.org/</a></p>
-<p>附上2个效果图：</p>
-<p><strong>知乎</strong></p>
-<p><img src="https://i.loli.net/2020/09/29/TIycoLCGl9k4i6H.png" alt="image-20200924154136675"></p>
-<p><strong>Google</strong></p>
-<p><img src="https://i.loli.net/2020/09/29/WoJEwnuV98jeNDm.png" alt="image-20200924154252346"></p>
-<h3 id="Font-Rendering-Enhancer"><a href="#Font-Rendering-Enhancer" class="headerlink" title="Font Rendering Enhancer"></a><a target="_blank" rel="noopener" href="https://chrome.google.com/webstore/detail/font-rendering-enhancer/hmbmmdjlcdediglgfcdkhinjdelkiock">Font Rendering Enhancer</a></h3><p>Chrome的字体显示经常会发虚，通过这个可以增强显示效果。</p>
-<p><img src="https://i.loli.net/2020/09/29/HDqU3wgrBWxkQOc.png" alt="image-20200924160158941"></p>
-<h3 id="知乎外链直达"><a href="#知乎外链直达" class="headerlink" title="知乎外链直达"></a><a target="_blank" rel="noopener" href="https://chrome.google.com/webstore/detail/%E7%9F%A5%E4%B9%8E%E5%A4%96%E9%93%BE%E7%9B%B4%E8%BE%BE/chidjfbdenglhicdckjnjccccpgknfhg?hl=zh-CN">知乎外链直达</a></h3><p>浏览知乎的时候，有时候打开外部链接总是需要先重定向到 <strong>link.zhihu.com</strong>，再去点一下允许打开。</p>
-<p>这种操作多了后会有点反感，反正我是这样。</p>
-<p>这个插件可以跳过重定向的这一步，直接打开外部链接。</p>
-<h3 id="删除谷歌重定向"><a href="#删除谷歌重定向" class="headerlink" title="删除谷歌重定向"></a><a target="_blank" rel="noopener" href="https://chrome.google.com/webstore/detail/remove-google-redirection/dnhjklgpiifbofihffldllbcopkinlod">删除谷歌重定向</a></h3><p>与上面知乎的插件类似</p>
-<p>很久没更新了，但还是能够使用的。</p>
-<h3 id="Search-by-Image-by-Google"><a href="#Search-by-Image-by-Google" class="headerlink" title="Search by Image (by Google)"></a><a target="_blank" rel="noopener" href="https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne">Search by Image (by Google)</a></h3><p>这个功能应该Chrome 内置才对的，太常用了。</p>
-<p>可以在图片上面右键直接使用Google图片搜索当前图片。</p>
-<p>很多不知道出处的图片都可以通过这个方式找到来源。</p>
-<p><img src="https://i.loli.net/2020/09/29/xt39khb7MmLs6ad.png" alt="image-20200924162215828"></p>
-<p><img src="https://i.loli.net/2020/09/29/odfzcSemirE7UN3.png" alt="image-20200924162234747"></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/09/29/%E5%B8%B8%E7%94%A8%E7%9A%84Chrome%20%E6%8F%92%E4%BB%B6/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1050,22 +716,14 @@
 <p><strong>Typora</strong> 是一个所见即所得的<strong>Markdown</strong>笔记软件，可以把Markdown的标签给隐藏起来，直接预览。功能也强大，而且比较开放，可以直接保存为md后缀的文本，可通过<strong>Dropbox</strong>，<strong>iCloud</strong>等方式同步。功能免费。</p>
 <p><strong>而且Typora支持自定义主题</strong></p>
 <p>前几天找到一个Bear的主题，可以在Typora上面使用，这样的话，就可以使用Bear漂亮的主题，同时又可以比较自由地保存备份自己的md文档了。</p>
-<h2 id="下载Bear的主题"><a href="#下载Bear的主题" class="headerlink" title="下载Bear的主题"></a>下载Bear的主题</h2><p>这个主题的名字叫做<strong>Ursine</strong></p>
-<p>有两个模式</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gj256qh501j31940u0h8f.jpg" alt="image-20200924224752134"></p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gj256tle7bj31720u0qrl.jpg" alt="image-20200924224832051"></p>
-<p>主题的地址：<a target="_blank" rel="noopener" href="https://theme.typora.io/theme/Ursine/">https://theme.typora.io/theme/Ursine/</a></p>
-<p>具体下载地址：<a target="_blank" rel="noopener" href="https://github.com/aCluelessDanny/typora-theme-ursine/releases/download/2.0.2/Ursine.zip">https://github.com/aCluelessDanny/typora-theme-ursine/releases/download/2.0.2/Ursine.zip</a></p>
-<p>下载之后解压出来</p>
-<p>有以下文件：<img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gj256y4wusj30zy044mxk.jpg" alt="image-20200924224113347"></p>
-<p>选择偏好设置，打开Typora 的主题文件夹</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gj257143ejj312w0qoada.jpg" alt="image-20200924224618089"></p>
-<p>把刚才解压出来的文件拷贝过去，放在主题文件夹的根目录</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gj2574gh3oj31060iwtbi.jpg" alt="image-20200924230245891"></p>
-<p>重启Typora，然后在主题里面选择<strong>Ursine Polar</strong>或者<strong>Ursine Umbra</strong>主题</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gj25784p91j31280u04qp.jpg" alt="image-20200924230525202"></p>
-<p>开始享受吧。</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/09/24/%E7%94%A8Bear%20%E7%9A%84%E4%B8%BB%E9%A2%98%E8%A3%85%E6%89%AETypora/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1136,34 +794,14 @@
 <p>显示效果如下：</p>
 <blockquote>
 <h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3></blockquote>
-<h1 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; 世界上没有什么事是一顿烧烤不能解决的。如果有，那就两顿</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>世界上没有什么事是一顿烧烤不能解决的。如果有，那就两顿</p>
-</blockquote>
-<h2 id="块引用"><a href="#块引用" class="headerlink" title="块引用"></a>块引用</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,</span><br><span class="line">&gt; consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.</span><br><span class="line">&gt;</span><br><span class="line">&gt; Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse</span><br></pre></td></tr></table></figure>
-<p>显示效果：</p>
-<blockquote>
-<p>This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,<br>consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.</p>
-<p>Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse</p>
-</blockquote>
-<h1 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h1><h2 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">* China</span><br><span class="line">* England</span><br><span class="line">* USA</span><br><span class="line">* Germany</span><br></pre></td></tr></table></figure>
-<p>效果：</p>
-<ul>
-<li>China</li>
-<li>England</li>
-<li>USA</li>
-<li>Germany</li>
-</ul>
-<h2 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. China</span><br><span class="line">2. England</span><br><span class="line">3. USA</span><br><span class="line">4. Germany</span><br></pre></td></tr></table></figure>
-<p>效果：</p>
-<ol>
-<li>China</li>
-<li>England</li>
-<li>USA</li>
-<li>Germany</li>
-</ol>
-<p>参考链接：<br><a target="_blank" rel="noopener" href="http://www.debug4.me/%E5%B7%A5%E5%85%B7/markdown-learning/">Markdown标准语法与GitHub Flavored Markdown语法大全</a></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2016/06/29/%E5%AD%A6%E4%B9%A0markdown/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1232,7 +870,14 @@
 <p>很多命令还不懂什么意思，但是就像笑来说的，先用了再说。</p>
 <p><a target="_blank" rel="noopener" href="http://xiaolai.li/">http://xiaolai.li/</a></p>
 <p>谢谢你！</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2016/06/26/%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%B5%8B%E8%AF%95Github/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1319,6 +964,17 @@
       </div>
   </nav>
 </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/lecsven" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;lecsven" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/lecsven@gmail.com" title="E-Mail → lecsven@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/u/1250756295" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;1250756295" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+  </div>
 
 
 
