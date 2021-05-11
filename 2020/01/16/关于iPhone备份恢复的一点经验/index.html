@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="最近iPhone经历了一次曲折而最终有惊无险的恢复体验，我想把自己的过程和经验分享一下。 使用iPhone已经很多年了，之前每次更换手机或者手机卡顿了重新刷机，都是先用iTunes或者iMazing给手机完整备份，然后清空目标手机，再通过数据线完整恢复过去。这是最稳定最可靠的备份恢复方法。 我是一个对数据比较在乎，因此对待数据比较谨慎的人，所以一直有开通iCloud备份，把手机整个完整备份在云端。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iPhone备份恢复的一点经验">
+<meta property="og:url" content="http://example.com/2020/01/16/%E5%85%B3%E4%BA%8EiPhone%E5%A4%87%E4%BB%BD%E6%81%A2%E5%A4%8D%E7%9A%84%E4%B8%80%E7%82%B9%E7%BB%8F%E9%AA%8C/index.html">
+<meta property="og:site_name" content="lecsven&#39;s home">
+<meta property="og:description" content="最近iPhone经历了一次曲折而最终有惊无险的恢复体验，我想把自己的过程和经验分享一下。 使用iPhone已经很多年了，之前每次更换手机或者手机卡顿了重新刷机，都是先用iTunes或者iMazing给手机完整备份，然后清空目标手机，再通过数据线完整恢复过去。这是最稳定最可靠的备份恢复方法。 我是一个对数据比较在乎，因此对待数据比较谨慎的人，所以一直有开通iCloud备份，把手机整个完整备份在云端。">
+<meta property="og:locale">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008eGmZEgy1gmpylug8n5j30w10u0jvx.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008eGmZEgy1gmpyoezq2gj31cg0la0y0.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008eGmZEgy1gmpxf13lhrj30uc0u0gvw.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008eGmZEgy1gmpxe751iij311c0u0dr8.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008eGmZEgy1gmpyifw4klj30n01dswlj.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008eGmZEgy1gmpxgptg5yj310z0u0k6q.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008eGmZEgy1gmpx6cmz9hj30ug0u0wsl.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008eGmZEgy1gmpxuzyo30j30rg0iwk33.jpg">
+<meta property="article:published_time" content="2020-01-15T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-05-11T08:36:27.832Z">
+<meta property="article:author" content="lecsven">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/008eGmZEgy1gmpylug8n5j30w10u0jvx.jpg">
+
+<link rel="canonical" href="http://example.com/2020/01/16/%E5%85%B3%E4%BA%8EiPhone%E5%A4%87%E4%BB%BD%E6%81%A2%E5%A4%8D%E7%9A%84%E4%B8%80%E7%82%B9%E7%BB%8F%E9%AA%8C/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-Hans'
+  };
+</script>
+
+  <title>iPhone备份恢复的一点经验 | lecsven's home</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">lecsven's home</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/01/16/%E5%85%B3%E4%BA%8EiPhone%E5%A4%87%E4%BB%BD%E6%81%A2%E5%A4%8D%E7%9A%84%E4%B8%80%E7%82%B9%E7%BB%8F%E9%AA%8C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="lecsven">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lecsven's home">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          iPhone备份恢复的一点经验
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-01-16 00:00:00" itemprop="dateCreated datePublished" datetime="2020-01-16T00:00:00+08:00">2020-01-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-05-11 16:36:27" itemprop="dateModified" datetime="2021-05-11T16:36:27+08:00">2021-05-11</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>最近iPhone经历了一次曲折而最终有惊无险的恢复体验，我想把自己的过程和经验分享一下。</p>
+<p>使用iPhone已经很多年了，之前每次更换手机或者手机卡顿了重新刷机，都是先用iTunes或者iMazing给手机完整备份，然后清空目标手机，再通过数据线完整恢复过去。<strong>这是最稳定最可靠的备份恢复方法。</strong></p>
+<p>我是一个对数据比较在乎，因此对待数据比较谨慎的人，所以一直有开通iCloud备份，把手机整个完整备份在云端。我的手机容量是256G的，开通的iCloud备份是200G的，虽然手机几乎已经把所有空间都用满了，但是其实完整的备份只是占用了150G左右的iCloud空间。<strong>对我来说，这是一个救了我命的习惯。</strong></p>
+<p>先声明，有完整iCloud备份的人也许不需要看我下面的大段文字。可以直接跳到最后，查看结论。</p>
+<p>与此同时，有一个<strong>隐患</strong>，上面也提到，就是我的手机一直用的比较满，<strong>只剩下几个G的空间</strong>。前几天，在给手机备份的过程中，不知为何，可能备份的过程中手机本身的容量也会增加吧？手机可能由于容量过满，自动<strong>关机</strong>了。（我也不敢百分百确定，但是我的手机之前没出过不能开机的问题，只能想到这个容量满了的可能性。网上有不少类似情况的问题）只能网上查阅，试用了各种教程。以下做一个记录，给遇到同样情况的人一点经验吧。</p>
+<h2 id="手机容量已满，无法开机"><a href="#手机容量已满，无法开机" class="headerlink" title="手机容量已满，无法开机"></a>手机容量已满，无法开机</h2><p>遇到相同问题的链接提供几个作参考：</p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/39636458">https://zhuanlan.zhihu.com/p/39636458</a></p>
+<p><a target="_blank" rel="noopener" href="https://discussionschinese.apple.com/thread/251104051">https://discussionschinese.apple.com/thread/251104051</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.douban.com/group/topic/102239033/">https://www.douban.com/group/topic/102239033/</a></p>
+<h2 id="强制重启"><a href="#强制重启" class="headerlink" title="强制重启"></a>强制重启</h2><p>刚开始尝试着能否通过强制重启，让手机可以重新启动，试了好几次，以失败告终。</p>
+<p>iPhone强制重启的方式换了几次，连这个都要查阅教程。下面顺便提下吧。</p>
+<p><strong>普通正常重启：</strong></p>
+<p><img src="https://tva1.sinaimg.cn/large/008eGmZEgy1gmpylug8n5j30w10u0jvx.jpg" alt="image-20210116225052291"></p>
+<p><strong>强制重启：</strong></p>
+<p><img src="https://tva1.sinaimg.cn/large/008eGmZEgy1gmpyoezq2gj31cg0la0y0.jpg" alt="image-20210116233842279"></p>
+<p><a target="_blank" rel="noopener" href="https://support.apple.com/zh-cn/HT201412">https://support.apple.com/zh-cn/HT201412</a></p>
+<p>对我来说，这个方法失败，重启之后还是无法进入手机系统。</p>
+<h2 id="进入恢复模式或者DFU模式，更新系统"><a href="#进入恢复模式或者DFU模式，更新系统" class="headerlink" title="进入恢复模式或者DFU模式，更新系统"></a>进入恢复模式或者DFU模式，更新系统</h2><p>于是尝试其他方法，主要就是进入恢复模式或者DFU模式，然后给手机更新系统，运气好的话，能够升级系统，也就能开机，数据就能够保留。这是最好的结果。</p>
+<p>进入恢复模式或者DFU模式（这两个模式是有区别的），进入两种模式的教程如下：</p>
+<p><a target="_blank" rel="noopener" href="https://support.apple.com/zh-cn/HT201263">https://support.apple.com/zh-cn/HT201263</a></p>
+<p><a target="_blank" rel="noopener" href="https://mrmad.com.tw/iphone-11-or-iphone-11-pro-restart-power-off-dfu-recovery">https://mrmad.com.tw/iphone-11-or-iphone-11-pro-restart-power-off-dfu-recovery</a></p>
+<p><img src="https://tva1.sinaimg.cn/large/008eGmZEgy1gmpxf13lhrj30uc0u0gvw.jpg" alt="image-20210116225504666"></p>
+<p><img src="https://tva1.sinaimg.cn/large/008eGmZEgy1gmpxe751iij311c0u0dr8.jpg" alt="image-20210116225416771"></p>
+<p>主要过程包括进入手机的恢复模式，通过iTunes给手机做更新，成功下载更新，然后安装更新的过程中失败，试了几次，都是一样的。可能手机真的太满了，连更新系统的数据都无法写入吧。</p>
+<h2 id="通过iCloud恢复"><a href="#通过iCloud恢复" class="headerlink" title="通过iCloud恢复"></a>通过iCloud恢复</h2><p>其实呢，如果你手机平时容量留多一点，也许就不会出现我这种让人纠结的情况了。所以，养成<strong>不要把手机用得太满的习惯</strong>很重要，手机会因为容量用得太满出现卡顿降频的情况，甚至无法关机，值得注意。</p>
+<p>上面的方法都试过了，只能放弃。</p>
+<p>上面一开始提到过，我还有一个完整的iCloud备份，所以，这时候我开始对它充满期待了。</p>
+<p>我没有使用过iCloud做过完整的恢复，所以刚开始有点担心它的可靠程度。事实证明，是我多虑了。（其实，如果有完整的iCloud备份，上面的折腾也许完全是无用功）</p>
+<p>把手机进去DFU模式，然后刷进去一份干净的系统，这个过程会把所有数据完全清空，过程完成之后可以开机进入手机系统。</p>
+<p>然后选择通过iCloud云端恢复。</p>
+<p>刚开始会显示还有几个小时，然后十几个小时，甚至显示还有二十几个小时。不过等后台运算逐渐准确之后，可能只需要最多几个小时就可以自动重启进入系统了，这个时候已经恢复了一部分数据，然后会缓慢下载其他数据。有很多<strong>微信</strong>数据的人，微信恢复是放到最后的，也是最耗时的。</p>
+<p>我有30G的<strong>微信数据</strong>。所以，这又埋下另一个<strong>隐患</strong>。</p>
+<h2 id="微信数据恢复遥遥无期"><a href="#微信数据恢复遥遥无期" class="headerlink" title="微信数据恢复遥遥无期"></a><strong>微信数据恢复遥遥无期</strong></h2><p>等到其他数据都恢复成功。只剩下微信没有恢复了。这个时候才是开始考验耐心的时候。</p>
+<p>在通用&gt;iPhone储存空间里面，有可能微信app的数据缓慢增加，非常非常慢，然后等到恢复几G或者十几个G的时候，突然又重新开始了。晚上恢复到了早上还没有恢复成功。</p>
+<p><img src="https://tva1.sinaimg.cn/large/008eGmZEgy1gmpyifw4klj30n01dswlj.jpg" alt="我的微信恢复过程"></p>
+<p>被这个问题困扰，上网查阅教程。才发现情况很普遍。</p>
+<p><a target="_blank" rel="noopener" href="https://v2ex.com/t/719241">https://v2ex.com/t/719241</a></p>
+<p><a target="_blank" rel="noopener" href="https://v2ex.com/t/719241">https://v2ex.com/t/719241</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.v2ex.com/t/710669">https://www.v2ex.com/t/710669</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.v2ex.com/t/696900">https://www.v2ex.com/t/696900</a></p>
+<p><a target="_blank" rel="noopener" href="https://v2ex.com/t/520683">https://v2ex.com/t/520683</a></p>
+<p><img src="https://tva1.sinaimg.cn/large/008eGmZEgy1gmpxgptg5yj310z0u0k6q.jpg" alt="image-20210116225643143"></p>
+<p>包括手机测评的钟文泽也遇到了：</p>
+<p><img src="https://tva1.sinaimg.cn/large/008eGmZEgy1gmpx6cmz9hj30ug0u0wsl.jpg" alt="image-20210116224641401"></p>
+<p>以上各种吐槽，各种小技巧，试了切换WiFi，更换DNS，使用科学上网，使用蜂窝网络，都以失败告终。最终还是什么都不做，把手机放在床头柜，又放了一整夜，最后早上起来，发现完全恢复了。所以结论就是，需要稳定的网络，不去操作手机，等系统后台自动缓慢恢复。很多人反映都是可以完整恢复的，只是时间问题。所以，也许，还需要一点运气吧。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>其实，以上内容，<strong>最重要的建议还是做好备份</strong>。如果你不觉得手动给手机备份到电脑麻烦，那么这是一个比较好的习惯。然后，养成过段时间就把微信的聊天记录备份一次，也是一个很好的习惯。微信PC端可以给手机聊天记录做备份：</p>
+<p><img src="https://tva1.sinaimg.cn/large/008eGmZEgy1gmpxuzyo30j30rg0iwk33.jpg" alt="image-20210116231026612"></p>
+<p>如果，你觉得以上都有点麻烦，需要经常去主动手工操作。你可以尝试用iCloud给手机做个完整备份，每天睡觉之后，系统会在后台把手机新的内容上传备份到云端，所以你就有了一个完整而又比较新的备份。万一有一天手机出了问题，它能帮上大忙。我很感谢它。</p>
+<p>以上，就是我这几天经历的关于iPhone恢复和备份的一点经验，希望能给大家提供一点有价值的信息。有错误欢迎指正，谢谢！</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2016/06/29/%E5%AD%A6%E4%B9%A0markdown/" rel="prev" title="学习markdown">
+      <i class="fa fa-chevron-left"></i> 学习markdown
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/09/24/%E7%94%A8Bear%20%E7%9A%84%E4%B8%BB%E9%A2%98%E8%A3%85%E6%89%AETypora/" rel="next" title="用Bear 的主题装扮Typora">
+      用Bear 的主题装扮Typora <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%8B%E6%9C%BA%E5%AE%B9%E9%87%8F%E5%B7%B2%E6%BB%A1%EF%BC%8C%E6%97%A0%E6%B3%95%E5%BC%80%E6%9C%BA"><span class="nav-number">1.</span> <span class="nav-text">手机容量已满，无法开机</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%BA%E5%88%B6%E9%87%8D%E5%90%AF"><span class="nav-number">2.</span> <span class="nav-text">强制重启</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9B%E5%85%A5%E6%81%A2%E5%A4%8D%E6%A8%A1%E5%BC%8F%E6%88%96%E8%80%85DFU%E6%A8%A1%E5%BC%8F%EF%BC%8C%E6%9B%B4%E6%96%B0%E7%B3%BB%E7%BB%9F"><span class="nav-number">3.</span> <span class="nav-text">进入恢复模式或者DFU模式，更新系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%9A%E8%BF%87iCloud%E6%81%A2%E5%A4%8D"><span class="nav-number">4.</span> <span class="nav-text">通过iCloud恢复</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BE%AE%E4%BF%A1%E6%95%B0%E6%8D%AE%E6%81%A2%E5%A4%8D%E9%81%A5%E9%81%A5%E6%97%A0%E6%9C%9F"><span class="nav-number">5.</span> <span class="nav-text">微信数据恢复遥遥无期</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">6.</span> <span class="nav-text">总结</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">lecsven</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/lecsven" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;lecsven" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/lecsven@gmail.com" title="E-Mail → lecsven@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/u/1250756295" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;1250756295" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/lecsven" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;lecsven" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">lecsven</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
