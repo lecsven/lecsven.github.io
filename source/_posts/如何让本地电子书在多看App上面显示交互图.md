@@ -36,7 +36,7 @@ date: 2020-12-07
 
 
 
-![](https://tva1.sinaimg.cn/large/0081Kckwgy1glealmhpxsj30n01dsh2p.jpg)
+![](/images/2020-12-07/01-epub-no-zoom.jpg)
 关于**Sigil:**
 
 > **Sigil**是一款[EPUB](https://zh.wikipedia.org/wiki/EPUB)[电子书](https://zh.wikipedia.org/wiki/電子書)制作软件及[开源](https://zh.wikipedia.org/wiki/开源软件)EPUB电子书编辑器，支援[Windows](https://zh.wikipedia.org/wiki/Windows)、[Linux](https://zh.wikipedia.org/wiki/Linux)和[Mac](https://zh.wikipedia.org/wiki/Mac)系统。Sigil使用[CSS](https://zh.wikipedia.org/wiki/CSS)和[HTML](https://zh.wikipedia.org/wiki/HTML)格式，拥有[所见即所得](https://zh.wikipedia.org/wiki/所見即所得)界面，并有自动生成目录、自动修正等功能。
@@ -53,7 +53,7 @@ https://www.bilibili.com/video/av32221153/
 
 打开图书后，在**Sigil**里面显示是这样的：
 
-![Snipaste_2020-12-06_18-16-54](https://i.loli.net/2021/05/11/hXsurnepKLvxq9T.jpg)
+![Snipaste_2020-12-06_18-16-54](/images/2020-12-07/02-sigil-open.jpg)
 
 
 
@@ -83,7 +83,7 @@ https://www.bilibili.com/video/av32221153/
 
 
 
-![](https://tva1.sinaimg.cn/large/0081Kckwgy1glectgfzwnj311006uacc.jpg)
+![](/images/2020-12-07/03-sigil-images.jpg)
 
 我们只需要保留最重要的**图片路径**以及**图片描述**就够了：
 
@@ -139,13 +139,13 @@ https://tieba.baidu.com/p/3493107610?fr=good
 
 这个时候**Sigil**搜索框显示是下面这样的，文字变蓝说明正则语句查找到了我们想要替换的语句。
 
-![image-20201206201013373](https://tva1.sinaimg.cn/large/0081Kckwgy1glee8p65ogj30u00vr154.jpg)
+![image-20201206201013373](/images/2020-12-07/04-sigil-find.jpg)
 
 
 
 如果选中所有HTML文件，然后选中**计数所有**，显示有70个匹配，与电子书中的图片数量匹配，说明这个查找语句可以适合本书所有图片。
 
- ![image-20201206202013465](https://tva1.sinaimg.cn/large/0081Kckwgy1gleej2tp3qj30u00v113v.jpg)
+ ![image-20201206202013465](/images/2020-12-07/05-sigil-count.jpg)
 
 
 
@@ -153,7 +153,7 @@ https://tieba.baidu.com/p/3493107610?fr=good
 
 替换之后是这样的：
 
-![image-20201206202257043](https://tva1.sinaimg.cn/large/0081Kckwgy1gleelxun9xj310u0f6adk.jpg)
+![image-20201206202257043](/images/2020-12-07/06-sigil-replace.jpg)
 
 没问题，那就把其他的图片也替换了。
 
@@ -161,11 +161,11 @@ https://tieba.baidu.com/p/3493107610?fr=good
 
 
 
-![](https://tva1.sinaimg.cn/large/0081Kckwgy1gleesbp1jzj30n01dsn2e.jpg)
+![](/images/2020-12-07/07-duokan-1.jpg)
 
-![](https://tva1.sinaimg.cn/large/0081Kckwgy1glees7w65uj30n01dsk6o.jpg)
+![](/images/2020-12-07/08-duokan-2.jpg)
 
-![](https://tva1.sinaimg.cn/large/0081Kckwgy1glees2w787j30n01ds4qp.jpg)
+![](/images/2020-12-07/09-duokan-3.jpg)
 图片可以放大了。完成。
 
 
