@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"lecsven.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="问题现象博客上几篇旧文章的图片无法显示，浏览器里是一个个「裂图」图标。奇怪的是，并不是所有文章都出问题：有的文章图片一切正常，有的整篇几乎全是空白占位。 这些文章都是几年前写的，正文里的图片一直是用外链的方式插入的，托管在第三方免费图床上。既然大部分页面还能打开、文字也在，问题就只可能出在这些外链图片本身。 根因分析把出问题的图片地址单独拿出来，用浏览器直接打开是能看到的；但只要从博客页面的上下文">
+<meta property="og:type" content="article">
+<meta property="og:title" content="从第三方图床到仓库自托管：一次 Hexo 博客图片失效的排查与迁移">
+<meta property="og:url" content="https://lecsven.github.io/2026/10/18/Hexo-%E5%9B%BE%E5%BA%8A%E8%BF%81%E7%A7%BB%E4%B8%8E%E5%9B%BE%E7%89%87%E8%87%AA%E6%89%98%E7%AE%A1%E5%AE%9E%E8%B7%B5/index.html">
+<meta property="og:site_name" content="lecsven&#39;s home">
+<meta property="og:description" content="问题现象博客上几篇旧文章的图片无法显示，浏览器里是一个个「裂图」图标。奇怪的是，并不是所有文章都出问题：有的文章图片一切正常，有的整篇几乎全是空白占位。 这些文章都是几年前写的，正文里的图片一直是用外链的方式插入的，托管在第三方免费图床上。既然大部分页面还能打开、文字也在，问题就只可能出在这些外链图片本身。 根因分析把出问题的图片地址单独拿出来，用浏览器直接打开是能看到的；但只要从博客页面的上下文">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-10-17T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-10-18T13:18:54.809Z">
+<meta property="article:author" content="lecsven">
+<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="GitHub Pages">
+<meta property="article:tag" content="图床">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://lecsven.github.io/2026/10/18/Hexo-%E5%9B%BE%E5%BA%8A%E8%BF%81%E7%A7%BB%E4%B8%8E%E5%9B%BE%E7%89%87%E8%87%AA%E6%89%98%E7%AE%A1%E5%AE%9E%E8%B7%B5/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>从第三方图床到仓库自托管：一次 Hexo 博客图片失效的排查与迁移 | lecsven's home</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">lecsven's home</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lecsven.github.io/2026/10/18/Hexo-%E5%9B%BE%E5%BA%8A%E8%BF%81%E7%A7%BB%E4%B8%8E%E5%9B%BE%E7%89%87%E8%87%AA%E6%89%98%E7%AE%A1%E5%AE%9E%E8%B7%B5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="lecsven">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lecsven's home">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          从第三方图床到仓库自托管：一次 Hexo 博客图片失效的排查与迁移
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2026-10-18 00:00:00 / 修改时间：21:18:54" itemprop="dateCreated datePublished" datetime="2026-10-18T00:00:00+08:00">2026-10-18</time>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>3.2k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>3 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="问题现象"><a href="#问题现象" class="headerlink" title="问题现象"></a>问题现象</h2><p>博客上几篇旧文章的图片无法显示，浏览器里是一个个「裂图」图标。奇怪的是，并不是所有文章都出问题：有的文章图片一切正常，有的整篇几乎全是空白占位。</p>
+<p>这些文章都是几年前写的，正文里的图片一直是用<strong>外链</strong>的方式插入的，托管在第三方免费图床上。既然大部分页面还能打开、文字也在，问题就只可能出在这些外链图片本身。</p>
+<h2 id="根因分析"><a href="#根因分析" class="headerlink" title="根因分析"></a>根因分析</h2><p>把出问题的图片地址单独拿出来，用浏览器直接打开是能看到的；但只要从博客页面的上下文去请求，就失败。这种「换一个来源就失败」的特征，是典型的 <strong>Referer 防盗链</strong>。</p>
+<p>用 <code>curl</code> 手动带上博客的 Referer 复现一下就很清楚了：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 模拟浏览器从博客页面发起图片请求</span></span><br><span class="line">curl -s -o /dev/null -w <span class="string">&quot;%&#123;http_code&#125;\n&quot;</span> \</span><br><span class="line">  -H <span class="string">&quot;Referer: https://&lt;博客域名&gt;/&quot;</span> \</span><br><span class="line">  <span class="string">&quot;https://&lt;图床地址&gt;/xxx.jpg&quot;</span></span><br><span class="line"><span class="comment"># 输出：403</span></span><br></pre></td></tr></table></figure>
+<p>再对比不带 Referer 的请求：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl -s -o /dev/null -w <span class="string">&quot;%&#123;http_code&#125;\n&quot;</span> <span class="string">&quot;https://&lt;图床地址&gt;/xxx.jpg&quot;</span></span><br><span class="line"><span class="comment"># 输出：200</span></span><br></pre></td></tr></table></figure>
+<p>结论很明确：</p>
+<ul>
+<li>出问题的那批图来自<strong>微博图床</strong>，该 CDN 会校验 <code>Referer</code>，来源不是它白名单内的域名时直接返回 <code>403</code>。</li>
+<li>另一批图来自 <strong>SM.MS 图床</strong>，当时没有做这种限制，所以还能显示。</li>
+</ul>
+<p>也就是说，「有的正常、有的裂图」并不是随机的，而是<strong>取决于图片挂在哪个图床</strong>。根本问题则是同一个：<strong>把博客的可视内容托付给了随时会变的第三方免费服务</strong>。免费图床限流、防盗链、甚至关停，站点就会大面积「塌方」。</p>
+<p>顺带排查了一下：所有外链图片都只出现在文章正文（Markdown 里），没有任何配置文件或模板引用它们，涉及 8 篇文章、共 91 张唯一图片。</p>
+<h2 id="修复方案"><a href="#修复方案" class="headerlink" title="修复方案"></a>修复方案</h2><p>核心思路只有一句话：<strong>把图片收回来，放进博客仓库自托管</strong>。仓库本身就是通过静态托管发布出去的，图片和页面同源，天然没有防盗链问题，也不再依赖任何第三方。</p>
+<h3 id="1-图片落库并校验"><a href="#1-图片落库并校验" class="headerlink" title="1. 图片落库并校验"></a>1. 图片落库并校验</h3><p>先按「不带 Referer」的方式把图片全部下载下来，然后逐张校验，确保拿到的确实是合法图片，而不是图床返回的错误页或占位图：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">curl -sL -o <span class="string">&quot;<span class="variable">$dest</span>&quot;</span> <span class="string">&quot;<span class="variable">$url</span>&quot;</span></span><br><span class="line"><span class="comment"># 校验 MIME 类型与真实尺寸</span></span><br><span class="line">file -b --mime-type <span class="string">&quot;<span class="variable">$dest</span>&quot;</span>     <span class="comment"># 期望 image/*</span></span><br><span class="line">sips -g pixelWidth -g pixelHeight <span class="string">&quot;<span class="variable">$dest</span>&quot;</span>   <span class="comment"># 期望输出像素尺寸</span></span><br></pre></td></tr></table></figure>
+<p>这里有一个小发现：其中一张远端以 <code>.png</code> 命名的图，真实内容是 <strong>WebP</strong>。像 <code>&lt;img&gt;</code> 这种场景浏览器通常会做内容嗅探，勉强能显示，但仍然统一按真实格式改名保存，避免以后被某个环节的 MIME 校验坑到。</p>
+<p>目录按<strong>文章 slug</strong> 组织，一篇一个文件夹，文件名按正文出现顺序编号，既清晰又不会因为多篇文章日期相同而冲突：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">source/images/</span><br><span class="line">├─ &lt;post-slug-a&gt;/01.jpg</span><br><span class="line">├─ &lt;post-slug-a&gt;/02.jpg</span><br><span class="line">├─ &lt;post-slug-b&gt;/01.png</span><br><span class="line">└─ ...</span><br></pre></td></tr></table></figure>
+<p>同一张图在正文里被引用多次时，多个位置指向同一个本地文件，不做重复下载。</p>
+<h3 id="2-改写正文链接"><a href="#2-改写正文链接" class="headerlink" title="2. 改写正文链接"></a>2. 改写正文链接</h3><p>把每篇文章里的图片地址批量替换为<strong>根相对路径</strong>，只改链接本身，保留原有的 alt 文本和 Markdown 语法：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 之前 --&gt;</span><br><span class="line">![<span class="string">截图</span>](<span class="link">https://&lt;图床地址&gt;/xxx.png</span>)</span><br><span class="line"></span><br><span class="line">&lt;!-- 之后 --&gt;</span><br><span class="line">![<span class="string">截图</span>](<span class="link">/images/&lt;post-slug&gt;/01.png</span>)</span><br></pre></td></tr></table></figure>
+<p>用根相对路径（以 <code>/</code> 开头）而不是相对路径，好处是不受文章 URL 层级影响，无论页面被放在哪一级目录都能正确解析。</p>
+<h3 id="3-顺手修正站点-URL-配置"><a href="#3-顺手修正站点-URL-配置" class="headerlink" title="3. 顺手修正站点 URL 配置"></a>3. 顺手修正站点 URL 配置</h3><p>排查时发现站点的 <code>_config.yml</code> 里 <code>url</code> 还停留在模板默认的占位值：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 修正前</span></span><br><span class="line"><span class="attr">url:</span> <span class="string">http://example.com</span></span><br><span class="line"><span class="comment"># 修正后</span></span><br><span class="line"><span class="attr">url:</span> <span class="string">https://&lt;站点正式域名&gt;</span></span><br></pre></td></tr></table></figure>
+<p>这个字段虽然不影响页面里的相对路径，但它决定了 <code>canonical</code>、<code>og:url</code>、<code>og:image</code> 等元信息。值不对的话，社交平台分享卡片又会回到「图片不显示」的老问题，所以一并改正。</p>
+<h3 id="4-两个构建环境的坑"><a href="#4-两个构建环境的坑" class="headerlink" title="4. 两个构建环境的坑"></a>4. 两个构建环境的坑</h3><p>真正动手构建时才暴露出两个更隐蔽的问题，值得记下来。</p>
+<p>其一，<strong>主题目录是一个空的 Git 子模块</strong>。仓库里记录了子模块的指针，却没有对应的 <code>.gitmodules</code>，于是在一台新机器上克隆后，主题目录是空的。此时构建不会报错，只是安静地生成一堆 <strong>0 字节的 HTML</strong>——看起来「构建成功」，实际上整个站点是空白的。解决办法是把主题还原到仓库记录的那个提交，并补回两处未提交的主题定制（一套配色方案，以及页脚里追加的一段访问统计脚本），让本地构建结果与线上一致。</p>
+<p>其二，<strong>有一个资源只存在于发布分支</strong>。发布出去的站点里有一张头像图片，但它的源文件从未提交到源码分支。如果直接重新构建部署，它就会被删掉，导致头像 404。这颗「定时炸弹」平时看不见，只有在下一次部署时才会爆炸。既然发现了，就把它补回源码目录，让它进入正常的构建流程。</p>
+<h2 id="验证方法"><a href="#验证方法" class="headerlink" title="验证方法"></a>验证方法</h2><p>「看起来没问题」远远不够，这次把验证做扎实了：</p>
+<ol>
+<li><strong>图片数量核对</strong>：逐篇统计生成的 <code>&lt;img&gt;</code> 标签数量，与预期张数一一对齐。</li>
+<li><strong>无遗漏检查</strong>：确认生成结果里不再有任何指向旧图床的外链（全文搜索图床域名，必须为零）。</li>
+<li><strong>逐张探测</strong>：对每一张自托管图片，都<strong>带上博客 Referer</strong> 发一次请求，确认返回 <code>200</code>。这一步很关键——要验证的正是「在被防盗链拦截的上下文里也能加载」。</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">curl -s -o /dev/null -w <span class="string">&quot;%&#123;http_code&#125; %&#123;content_type&#125;\n&quot;</span> \</span><br><span class="line">  -H <span class="string">&quot;Referer: https://&lt;站点正式域名&gt;/&quot;</span> \</span><br><span class="line">  <span class="string">&quot;https://&lt;站点正式域名&gt;/images/&lt;post-slug&gt;/01.jpg&quot;</span></span><br><span class="line"><span class="comment"># 输出：200 image/jpeg</span></span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li><strong>产物比对</strong>：把新生成的静态产物与线上正在服务的版本做整体比对，忽略换行符差异、每次构建都会随机的装饰色、以及时间戳，确认除了本次预期改动之外没有其它意外变化。这一步是防止「改 A 处、坏 B 处」的安全网。</li>
+</ol>
+<h2 id="部署流程"><a href="#部署流程" class="headerlink" title="部署流程"></a>部署流程</h2><p>本博客使用 Hexo，源码在一个分支、生成产物用另一个分支托管。标准流程是：先提交源码，再构建并部署（部署会把静态产物推送到托管分支）：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1. 提交并推送源码</span></span><br><span class="line">git add <span class="built_in">source</span>/_posts <span class="built_in">source</span>/images _config.yml</span><br><span class="line">git commit -m <span class="string">&quot;...&quot;</span></span><br><span class="line">git push origin &lt;源码分支&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 构建并部署（生成产物 → 推送托管分支）</span></span><br><span class="line">hexo clean &amp;&amp; hexo generate &amp;&amp; hexo deploy</span><br></pre></td></tr></table></figure>
+<p>部署完成后，静态托管通常需要几十秒才刷新。等一会儿再线上抽查几张图，确认返回 <code>200</code>，就真正收工了。</p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><ul>
+<li>博客正文里的图片，<strong>尽量不要外链第三方免费图床</strong>。它们限流、防盗链、乃至关停时，你的站点会在大面积「塌方」后才被发现。</li>
+<li>图片<strong>跟着仓库一起走</strong>是最省心的方案：同源、无防盗链、随站点一起版本化。</li>
+<li><strong>验证要覆盖「失败上下文」</strong>：这次的关键一步，就是带着博客 Referer 去请求每一张图，而不是只验证图片「本身能打开」。</li>
+<li>构建环境里的<strong>空子模块</strong>和<strong>只存在于发布分支的资源</strong>是两类典型的隐形陷阱，新机器上首次构建、以及重新部署之前，都值得多留一个心眼。</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+              <a href="/tags/GitHub-Pages/" rel="tag"># GitHub Pages</a>
+              <a href="/tags/%E5%9B%BE%E5%BA%8A/" rel="tag"># 图床</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/05/09/git-ssh-key-%E9%85%8D%E7%BD%AE/" rel="prev" title="git ssh key 配置">
+      <i class="fa fa-chevron-left"></i> git ssh key 配置
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E7%8E%B0%E8%B1%A1"><span class="nav-number">1.</span> <span class="nav-text">问题现象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%B9%E5%9B%A0%E5%88%86%E6%9E%90"><span class="nav-number">2.</span> <span class="nav-text">根因分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%AE%E5%A4%8D%E6%96%B9%E6%A1%88"><span class="nav-number">3.</span> <span class="nav-text">修复方案</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%9B%BE%E7%89%87%E8%90%BD%E5%BA%93%E5%B9%B6%E6%A0%A1%E9%AA%8C"><span class="nav-number">3.1.</span> <span class="nav-text">1. 图片落库并校验</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E6%94%B9%E5%86%99%E6%AD%A3%E6%96%87%E9%93%BE%E6%8E%A5"><span class="nav-number">3.2.</span> <span class="nav-text">2. 改写正文链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E9%A1%BA%E6%89%8B%E4%BF%AE%E6%AD%A3%E7%AB%99%E7%82%B9-URL-%E9%85%8D%E7%BD%AE"><span class="nav-number">3.3.</span> <span class="nav-text">3. 顺手修正站点 URL 配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E4%B8%A4%E4%B8%AA%E6%9E%84%E5%BB%BA%E7%8E%AF%E5%A2%83%E7%9A%84%E5%9D%91"><span class="nav-number">3.4.</span> <span class="nav-text">4. 两个构建环境的坑</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%AA%8C%E8%AF%81%E6%96%B9%E6%B3%95"><span class="nav-number">4.</span> <span class="nav-text">验证方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%83%A8%E7%BD%B2%E6%B5%81%E7%A8%8B"><span class="nav-number">5.</span> <span class="nav-text">部署流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93"><span class="nav-number">6.</span> <span class="nav-text">小结</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="lecsven"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">lecsven</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/lecsven" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;lecsven" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/lecsven@gmail.com" title="E-Mail → lecsven@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/u/1250756295" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;1250756295" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/lecsven" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;lecsven" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2016 – 
+  <span itemprop="copyrightYear">2026</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">lecsven</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">17k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">15 分钟</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+
+
+
+
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    <span id="busuanzi_container_site_pv">总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+    <span class="post-meta-divider">|</span>
+    <span id="busuanzi_container_site_uv">总访客数<span id="busuanzi_value_site_uv"></span>人</span>
+    <span class="post-meta-divider">|</span>
+<!-- 不蒜子计数初始值纠正 -->
+<script>
+$(document).ready(function() {
+
+    var int = setInterval(fixCount, 50);  // 50ms周期检测函数
+    var countOffset = 20000;  // 初始化首次数据
+
+    function fixCount() {            
+       if (document.getElementById("busuanzi_container_site_pv").style.display != "none")
+        {
+            $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + countOffset); 
+            clearInterval(int);
+        }                  
+        if ($("#busuanzi_container_site_pv").css("display") != "none")
+        {
+            $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + countOffset); // 加上初始数据 
+            clearInterval(int); // 停止检测
+        }  
+    }
+       	
+});
+</script> 
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
