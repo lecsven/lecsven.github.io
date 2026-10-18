@@ -17,31 +17,31 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"lecsven.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
   <meta name="description" content="设置默认shell使用下面命令设置默认shell 1chsh -s &#x2F;bin&#x2F;zsh   如果想修改回默认dash，同样使用chsh命令即可： 1chsh -s &#x2F;bin&#x2F;bash">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Mac 命令行配置">
-<meta property="og:url" content="http://example.com/2021/05/09/Mac-%E5%91%BD%E4%BB%A4%E8%A1%8C%E9%85%8D%E7%BD%AE/index.html">
+<meta property="og:url" content="https://lecsven.github.io/2021/05/09/Mac-%E5%91%BD%E4%BB%A4%E8%A1%8C%E9%85%8D%E7%BD%AE/index.html">
 <meta property="og:site_name" content="lecsven&#39;s home">
 <meta property="og:description" content="设置默认shell使用下面命令设置默认shell 1chsh -s &#x2F;bin&#x2F;zsh   如果想修改回默认dash，同样使用chsh命令即可： 1chsh -s &#x2F;bin&#x2F;bash">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNgy1gqbvvwkhn4j31860iemzf.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNgy1gqba8kgp99j31kh0u0jz2.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNgy1gqbvw4lemlj318z0u0qii.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNgy1gqbvw9k0ldj30gs0k014w.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNgy1gqbad3gdebj317x0u0n3x.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNgy1gqbhc6qg0ej31f60qewoc.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNgy1gqbvwj2vnij316w0u046w.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNgy1gqbb0s5sdyj317d0u0k0n.jpg">
+<meta property="og:image" content="https://lecsven.github.io/images/mac-cli-config/01.jpg">
+<meta property="og:image" content="https://lecsven.github.io/images/mac-cli-config/02.jpg">
+<meta property="og:image" content="https://lecsven.github.io/images/mac-cli-config/03.jpg">
+<meta property="og:image" content="https://lecsven.github.io/images/mac-cli-config/04.jpg">
+<meta property="og:image" content="https://lecsven.github.io/images/mac-cli-config/05.jpg">
+<meta property="og:image" content="https://lecsven.github.io/images/mac-cli-config/06.jpg">
+<meta property="og:image" content="https://lecsven.github.io/images/mac-cli-config/07.jpg">
+<meta property="og:image" content="https://lecsven.github.io/images/mac-cli-config/08.jpg">
 <meta property="article:published_time" content="2021-05-09T00:44:43.000Z">
-<meta property="article:modified_time" content="2026-10-18T12:48:34.821Z">
+<meta property="article:modified_time" content="2026-10-18T13:09:17.598Z">
 <meta property="article:author" content="lecsven">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/008i3skNgy1gqbvvwkhn4j31860iemzf.jpg">
+<meta name="twitter:image" content="https://lecsven.github.io/images/mac-cli-config/01.jpg">
 
-<link rel="canonical" href="http://example.com/2021/05/09/Mac-%E5%91%BD%E4%BB%A4%E8%A1%8C%E9%85%8D%E7%BD%AE/">
+<link rel="canonical" href="https://lecsven.github.io/2021/05/09/Mac-%E5%91%BD%E4%BB%A4%E8%A1%8C%E9%85%8D%E7%BD%AE/">
 
 
 <script id="page-configurations">
@@ -159,7 +159,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/09/Mac-%E5%91%BD%E4%BB%A4%E8%A1%8C%E9%85%8D%E7%BD%AE/">
+    <link itemprop="mainEntityOfPage" href="https://lecsven.github.io/2021/05/09/Mac-%E5%91%BD%E4%BB%A4%E8%A1%8C%E9%85%8D%E7%BD%AE/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -189,7 +189,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2026-10-18 20:48:34" itemprop="dateModified" datetime="2026-10-18T20:48:34+08:00">2026-10-18</time>
+                <time title="修改时间：2026-10-18 21:09:17" itemprop="dateModified" datetime="2026-10-18T21:09:17+08:00">2026-10-18</time>
               </span>
 
           
@@ -233,8 +233,8 @@
 <h3 id="cat-命令"><a href="#cat-命令" class="headerlink" title="cat 命令"></a>cat 命令</h3><p><code>cat</code>可以直接获取配置文件的内容</p>
 <p><code>gitconfig</code> 文件的路径在~下面：</p>
 <p>可以直接显示git的配置文件：</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gqbvvwkhn4j31860iemzf.jpg" alt="image-20210508200511388"></p>
-<h3 id="安装-oh-my-zsh"><a href="#安装-oh-my-zsh" class="headerlink" title="安装 oh-my-zsh"></a>安装 oh-my-zsh</h3><p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gqba8kgp99j31kh0u0jz2.jpg" alt="image-20210508201638508"></p>
+<p><img src="/images/mac-cli-config/01.jpg" alt="image-20210508200511388"></p>
+<h3 id="安装-oh-my-zsh"><a href="#安装-oh-my-zsh" class="headerlink" title="安装 oh-my-zsh"></a>安装 oh-my-zsh</h3><p><img src="/images/mac-cli-config/02.jpg" alt="image-20210508201638508"></p>
 <p>Curl 直接安装报错</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl: (35) LibreSSL SSL_connect: SSL_ERROR_SYSCALL in connection to raw.githubusercontent.com:443</span><br></pre></td></tr></table></figure>
 <p>找到这个教程：</p>
@@ -242,11 +242,11 @@
 <p>可以把sh文件下载然后本地安装</p>
 <p>首先打开：<a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh">https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh</a></p>
 <p>可以看到内容，证明连接没问题</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gqbvw4lemlj318z0u0qii.jpg" alt="image-20210508201944740"></p>
+<p><img src="/images/mac-cli-config/03.jpg" alt="image-20210508201944740"></p>
 <p>直接保存文件为install.sh</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gqbvw9k0ldj30gs0k014w.jpg" alt="image-20210508202020881"></p>
+<p><img src="/images/mac-cli-config/04.jpg" alt="image-20210508202020881"></p>
 <p>切换到下载文件的路径，然后运行<code>bash install.sh</code></p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gqbad3gdebj317x0u0n3x.jpg" alt="image-20210508202101065"></p>
+<p><img src="/images/mac-cli-config/05.jpg" alt="image-20210508202101065"></p>
 <p>搞定！</p>
 <p>另一方法是更换国内源，没测试，可供参考：</p>
 <p><a target="_blank" rel="noopener" href="https://www.codenong.com/cs109529180/">https://www.codenong.com/cs109529180/</a></p>
@@ -256,18 +256,18 @@
 
 
 <h4 id="关于Powerline-乱码"><a href="#关于Powerline-乱码" class="headerlink" title="关于Powerline 乱码"></a>关于Powerline 乱码</h4><p>如下设置：</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gqbhc6qg0ej31f60qewoc.jpg" alt="image-20210509002220991"></p>
+<p><img src="/images/mac-cli-config/06.jpg" alt="image-20210509002220991"></p>
 <p>参考链接：<a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1612798">https://cloud.tencent.com/developer/article/1612798</a></p>
 <h3 id="Home-brew-安装"><a href="#Home-brew-安装" class="headerlink" title="Home brew 安装"></a>Home brew 安装</h3><p>和安装oh-my-zsh同理</p>
 <p>先把sh文件保存到本地为homebrew.sh</p>
 <p>然后使用 bash  homebrew.sh安装</p>
 <p>安装完成</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gqbvwj2vnij316w0u046w.jpg" alt="image-20210508203942307"></p>
+<p><img src="/images/mac-cli-config/07.jpg" alt="image-20210508203942307"></p>
 <p>之前可能是网络问题，用这种方式安装挺顺利的。</p>
 <h3 id="试试安装wget"><a href="#试试安装wget" class="headerlink" title="试试安装wget"></a>试试安装wget</h3><p>命令：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install wget</span><br></pre></td></tr></table></figure>
 <p>顺利安装：</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gqbb0s5sdyj317d0u0k0n.jpg" alt="image-20210508204347203"></p>
+<p><img src="/images/mac-cli-config/08.jpg" alt="image-20210508204347203"></p>
 <h3 id="参考链接："><a href="#参考链接：" class="headerlink" title="参考链接："></a>参考链接：</h3><p><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000014992947">https://segmentfault.com/a/1190000014992947</a></p>
 <p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/106791346">https://zhuanlan.zhihu.com/p/106791346</a></p>
 <p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1684785">https://cloud.tencent.com/developer/article/1684785</a></p>
