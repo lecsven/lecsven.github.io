@@ -32,13 +32,13 @@ chsh -s /bin/bash
 
 可以直接显示git的配置文件：
 
-![image-20210508200511388](https://tva1.sinaimg.cn/large/008i3skNgy1gqbvvwkhn4j31860iemzf.jpg)
+![image-20210508200511388](/images/mac-cli-config/01.jpg)
 
 
 
 ### 安装 oh-my-zsh
 
-![image-20210508201638508](https://tva1.sinaimg.cn/large/008i3skNgy1gqba8kgp99j31kh0u0jz2.jpg)
+![image-20210508201638508](/images/mac-cli-config/02.jpg)
 
 Curl 直接安装报错
 
@@ -58,17 +58,17 @@ https://www.jianshu.com/p/b1de316fc3fc
 
 可以看到内容，证明连接没问题
 
-![image-20210508201944740](https://tva1.sinaimg.cn/large/008i3skNgy1gqbvw4lemlj318z0u0qii.jpg)
+![image-20210508201944740](/images/mac-cli-config/03.jpg)
 
 直接保存文件为install.sh
 
-![image-20210508202020881](https://tva1.sinaimg.cn/large/008i3skNgy1gqbvw9k0ldj30gs0k014w.jpg)
+![image-20210508202020881](/images/mac-cli-config/04.jpg)
 
 
 
 切换到下载文件的路径，然后运行`bash install.sh`
 
-![image-20210508202101065](https://tva1.sinaimg.cn/large/008i3skNgy1gqbad3gdebj317x0u0n3x.jpg)
+![image-20210508202101065](/images/mac-cli-config/05.jpg)
 
 搞定！
 
@@ -98,7 +98,7 @@ pip3 install powerline-status
 
 如下设置：
 
-![image-20210509002220991](https://tva1.sinaimg.cn/large/008i3skNgy1gqbhc6qg0ej31f60qewoc.jpg)
+![image-20210509002220991](/images/mac-cli-config/06.jpg)
 
 参考链接：https://cloud.tencent.com/developer/article/1612798
 
@@ -116,7 +116,7 @@ pip3 install powerline-status
 
 安装完成
 
-![image-20210508203942307](https://tva1.sinaimg.cn/large/008i3skNgy1gqbvwj2vnij316w0u046w.jpg)
+![image-20210508203942307](/images/mac-cli-config/07.jpg)
 
 
 
@@ -134,7 +134,7 @@ brew install wget
 
 顺利安装：
 
-![image-20210508204347203](https://tva1.sinaimg.cn/large/008i3skNgy1gqbb0s5sdyj317d0u0k0n.jpg)
+![image-20210508204347203](/images/mac-cli-config/08.jpg)
 
 
 

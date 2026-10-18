@@ -20,7 +20,7 @@ Chrome的优点，很多人都会说是快速、界面简洁。但是在我看�
 
 有时候不小心把标签页关掉了，可以使用快捷键Ctrl+Shift+T马上恢复。更多的时候是想从关掉的最近几个标签里面选择恢复某个标签页，这个时候使用这个插件可以比较清楚地挑选。
 
-![image-20200924150702702](https://i.loli.net/2020/09/29/t7TZrLGyqcA1Ngh.png)
+![image-20200924150702702](/images/chrome-extensions/01.png)
 
 ### [SwitchyOmega](https://chrome.google.com/webstore/detail/proxy-switchyomega/padekgcemlokbadohgkifijomclgjgif)
 
@@ -28,7 +28,7 @@ Chrome的优点，很多人都会说是快速、界面简洁。但是在我看�
 
 众所周知，国内的网络环境比较复杂，有时候访问国外网站需要挂上代理，这个插件可以比较方便的处理各种分流。国内的不走代理，国外的走代理。
 
-![image-20200924155808293](https://i.loli.net/2020/09/29/5zDXAJe2UQvyBwj.png)
+![image-20200924155808293](/images/chrome-extensions/02.png)
 
 
 
@@ -38,7 +38,7 @@ Chrome的优点，很多人都会说是快速、界面简洁。但是在我看�
 
 Chrome的内存占用特别大，这一点几乎是公认的。当你打开的标签页特别多的时候，可以一键把所有标签页都关掉，把所有链接集中到一个网页中，这样既省了内存，又能够在需要的时候把标签页一键恢复。
 
-![image-20200924154430583](https://i.loli.net/2020/09/29/QwPZ5OrFSxAquLK.png)
+![image-20200924154430583](/images/chrome-extensions/03.png)
 
 ### [Lastpass](https://chrome.google.com/webstore/detail/lastpass-free-password-ma/hdokiejnpimakedhajhdlcegeplioahd)
 
@@ -46,7 +46,7 @@ Chrome的内存占用特别大，这一点几乎是公认的。当你打开的�
 
 现在使用网络产品太多了，有一大堆账号密码需要记住，如果使用太过简单的密码肯定不安全，但是太复杂的密码又容易遗忘。虽然网上又不少教程帮助我们如何设置一个强大的密码，然后根据不同网站来做修改就可以通用了。但是这个插件可以在我们减少记忆负担的情况下还可以快速地输入密码。何乐而不为。这个软件在很多主流浏览器上面都可以免费使用，手机端也可以同步。
 
-![image-20200924155523311](https://i.loli.net/2020/09/29/YvaoqRLWzOn81KX.png)
+![image-20200924155523311](/images/chrome-extensions/04.png)
 
 
 
@@ -56,7 +56,7 @@ Chrome的内存占用特别大，这一点几乎是公认的。当你打开的�
 
 Chrome 自动的历史记录很不好用，这个插件可以让我们方便地根据日期选择某天的历史记录
 
-![image-20200924155843920](https://i.loli.net/2020/09/29/beJ5aUvBNQYpXmW.png)
+![image-20200924155843920](/images/chrome-extensions/05.png)
 
 
 
@@ -68,7 +68,7 @@ Chrome 自动的历史记录很不好用，这个插件可以让我们方便地�
 
 现在如果不使用广告拦截插件，很多网页的广告会让人眼花缭乱的，用了之后，世界清静了。
 
-![image-20200924155934244](https://i.loli.net/2020/09/29/6dlznofbGwFm5qi.png)
+![image-20200924155934244](/images/chrome-extensions/06.png)
 
 
 
@@ -80,7 +80,7 @@ Chrome 自动的历史记录很不好用，这个插件可以让我们方便地�
 
 国内的360等浏览器都有内置类似的功能。Chrome当然也应该有。
 
-![image-20200924160943370](https://i.loli.net/2020/09/29/3mSijLBfPuO8lN7.png)
+![image-20200924160943370](/images/chrome-extensions/07.png)
 
 
 
@@ -92,7 +92,7 @@ Chrome 自动的历史记录很不好用，这个插件可以让我们方便地�
 
 有时候我们需要测试一下浏览器的某个问题是插件导致的，还是网页本身的问题。这个时候，可以一键把正在使用的插件全部关闭，测试完了后，再一键把刚才原来已经启用的插件恢复——不会把原来没启用的插件恢复，别担心。
 
-![image-20200924144938170](https://i.loli.net/2020/09/29/MF1cUTpgb4oe7Sj.png)
+![image-20200924144938170](/images/chrome-extensions/08.png)
 
 ### [Video Speed Controller](https://chrome.google.com/webstore/detail/video-speed-controller/nffaoalbilbmmfgbnbgppjihopabppdk)
 
@@ -100,7 +100,7 @@ Chrome 自动的历史记录很不好用，这个插件可以让我们方便地�
 
 B站，Youtube 和Netflix 都是支持的。
 
-![image-20200924162713674](https://i.loli.net/2020/09/29/NK5sDfCjtdV7o8a.png)
+![image-20200924162713674](/images/chrome-extensions/09.png)
 
 
 
@@ -122,7 +122,7 @@ Chrome 自带的下载管理太弱了，这个可以增强一下
 
 点击后可以不用离开当前页面，查看最近下载的资源，可调用资源管理器打开
 
-![image-20200924150850438](https://i.loli.net/2020/09/29/ojYZfWEv2NJgLU6.png)
+![image-20200924150850438](/images/chrome-extensions/10.png)
 
 
 
@@ -136,7 +136,7 @@ Chrome 自带的下载管理太弱了，这个可以增强一下
 
 
 
-![image-20200924151608087](https://i.loli.net/2020/09/29/G2ylLFHPvwcu5XW.png)
+![image-20200924151608087](/images/chrome-extensions/11.png)
 
 ### [二维码生成器 (Quick QR)](https://chrome.google.com/webstore/detail/quick-qr-code-generator/afpbjjgbdimpioenaedcjgkaigggcdpp)
 
@@ -148,7 +148,7 @@ Chrome 自带的下载管理太弱了，这个可以增强一下
 
 在公众号上面不支持外链的情况下，把链接变成二维码也方便读者扫描打开。
 
-![image-20200924160032698](https://i.loli.net/2020/09/29/cuo7tXZzEs43b2m.png)
+![image-20200924160032698](/images/chrome-extensions/12.png)
 
 ### [Evernote Web Clipper](https://chrome.google.com/webstore/detail/evernote-web-clipper/pioclpoplcdbaefihamjohnefbikjilc)
 
@@ -160,7 +160,7 @@ Chrome 自带的下载管理太弱了，这个可以增强一下
 
 我曾经就在原网页已经消失的情况下，在Evernote中找到了我之前保存的内容，庆幸不已。
 
-![image-20200924152534402](https://i.loli.net/2020/09/29/w8jrm9LPvGBREJe.png)
+![image-20200924152534402](/images/chrome-extensions/13.png)
 
 
 
@@ -172,7 +172,7 @@ Chrome 自带的下载管理太弱了，这个可以增强一下
 
 功能强大，可以设置很多词典。划词快速，可以马上看到单词的解释。
 
-![image-20200924152730418](https://i.loli.net/2020/09/29/BIXCugKeivS7FyE.png)
+![image-20200924152730418](/images/chrome-extensions/14.png)
 
 
 
@@ -182,7 +182,7 @@ Chrome 自带的下载管理太弱了，这个可以增强一下
 
 比较小众吧。
 
-![image-20200924153303396](https://i.loli.net/2020/09/29/Th7lQr9PWmZOtjU.png)
+![image-20200924153303396](/images/chrome-extensions/15.png)
 
 
 
@@ -202,11 +202,11 @@ Chrome 自带的下载管理太弱了，这个可以增强一下
 
 **知乎**
 
-![image-20200924154136675](https://i.loli.net/2020/09/29/TIycoLCGl9k4i6H.png)
+![image-20200924154136675](/images/chrome-extensions/16.png)
 
 **Google**
 
-![image-20200924154252346](https://i.loli.net/2020/09/29/WoJEwnuV98jeNDm.png)
+![image-20200924154252346](/images/chrome-extensions/17.png)
 
 
 
@@ -214,7 +214,7 @@ Chrome 自带的下载管理太弱了，这个可以增强一下
 
 Chrome的字体显示经常会发虚，通过这个可以增强显示效果。
 
-![image-20200924160158941](https://i.loli.net/2020/09/29/HDqU3wgrBWxkQOc.png)
+![image-20200924160158941](/images/chrome-extensions/18.png)
 
 ### [知乎外链直达](https://chrome.google.com/webstore/detail/%E7%9F%A5%E4%B9%8E%E5%A4%96%E9%93%BE%E7%9B%B4%E8%BE%BE/chidjfbdenglhicdckjnjccccpgknfhg?hl=zh-CN)
 
@@ -242,9 +242,9 @@ Chrome的字体显示经常会发虚，通过这个可以增强显示效果。
 
 很多不知道出处的图片都可以通过这个方式找到来源。
 
-![image-20200924162215828](https://i.loli.net/2020/09/29/xt39khb7MmLs6ad.png)
+![image-20200924162215828](/images/chrome-extensions/19.png)
 
-![image-20200924162234747](https://i.loli.net/2020/09/29/odfzcSemirE7UN3.png)
+![image-20200924162234747](/images/chrome-extensions/20.png)
 
 
 

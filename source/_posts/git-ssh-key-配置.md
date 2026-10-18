@@ -6,7 +6,7 @@ tags:
 
 今天在Mac 上面写文章然后上传到Github Page的时候遇到了这个问题：
 
-![image-20210509112456620](https://i.loli.net/2021/05/10/TyAU8MxfYdjqQps.jpg)
+![image-20210509112456620](/images/git-ssh-key/01.jpg)
 
 原因应该是我的Mac 上面没有配置好GitHub的ssh key
 
@@ -18,11 +18,11 @@ https://www.jianshu.com/p/f22d02c7d943
 
 进入ssh文件夹：
 
-![image-20210509112748453](https://i.loli.net/2021/05/10/TyAU8MxfYdjqQps.jpg)
+![image-20210509112748453](/images/git-ssh-key/01.jpg)
 
 生成ssh-key:
 
-![image-20210509112929248](https://i.loli.net/2021/05/10/LXJ96xdiBVmtluD.jpg)
+![image-20210509112929248](/images/git-ssh-key/02.jpg)
 
 有如下内容：
 
@@ -35,16 +35,16 @@ Your public key has been saved in /Users/lecsven/.ssh/id_rsa.pub.
 
 新建SSH key:
 
-![image-20210509113633697](https://i.loli.net/2021/05/10/vZfKVwW1NrLFeDp.jpg)
+![image-20210509113633697](/images/git-ssh-key/03.jpg)
 
 粘贴进去，点击保存：
 
-![image-20210509113321497](https://i.loli.net/2021/05/10/A7xPsrgHXZdU5IR.jpg)
+![image-20210509113321497](/images/git-ssh-key/04.jpg)
 
 
 
 再试一次`git push origin hexo` :
 
-![image-20210509113816290](https://i.loli.net/2021/05/10/45C3K8udvjpyUDa.jpg)
+![image-20210509113816290](/images/git-ssh-key/05.jpg)
 
 成功！

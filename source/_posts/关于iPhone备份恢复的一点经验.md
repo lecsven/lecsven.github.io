@@ -37,7 +37,7 @@ iPhone强制重启的方式换了几次，连这个都要查阅教程。下面�
 
 **普通正常重启：**
 
-![image-20210116225052291](https://tva1.sinaimg.cn/large/008eGmZEgy1gmpylug8n5j30w10u0jvx.jpg)
+![image-20210116225052291](/images/iphone-backup/01.jpg)
 
 
 
@@ -45,7 +45,7 @@ iPhone强制重启的方式换了几次，连这个都要查阅教程。下面�
 
 **强制重启：**
 
-![image-20210116233842279](https://tva1.sinaimg.cn/large/008eGmZEgy1gmpyoezq2gj31cg0la0y0.jpg)
+![image-20210116233842279](/images/iphone-backup/02.jpg)
 
 https://support.apple.com/zh-cn/HT201412
 
@@ -63,9 +63,9 @@ https://support.apple.com/zh-cn/HT201263
 
 https://mrmad.com.tw/iphone-11-or-iphone-11-pro-restart-power-off-dfu-recovery
 
-![image-20210116225504666](https://tva1.sinaimg.cn/large/008eGmZEgy1gmpxf13lhrj30uc0u0gvw.jpg)
+![image-20210116225504666](/images/iphone-backup/03.jpg)
 
-![image-20210116225416771](https://tva1.sinaimg.cn/large/008eGmZEgy1gmpxe751iij311c0u0dr8.jpg)
+![image-20210116225416771](/images/iphone-backup/04.jpg)
 
 主要过程包括进入手机的恢复模式，通过iTunes给手机做更新，成功下载更新，然后安装更新的过程中失败，试了几次，都是一样的。可能手机真的太满了，连更新系统的数据都无法写入吧。
 
@@ -95,7 +95,7 @@ https://mrmad.com.tw/iphone-11-or-iphone-11-pro-restart-power-off-dfu-recovery
 
 在通用>iPhone储存空间里面，有可能微信app的数据缓慢增加，非常非常慢，然后等到恢复几G或者十几个G的时候，突然又重新开始了。晚上恢复到了早上还没有恢复成功。
 
-![我的微信恢复过程](https://tva1.sinaimg.cn/large/008eGmZEgy1gmpyifw4klj30n01dswlj.jpg)
+![我的微信恢复过程](/images/iphone-backup/05.jpg)
 
 
 
@@ -113,11 +113,11 @@ https://www.v2ex.com/t/696900
 
 https://v2ex.com/t/520683
 
-![image-20210116225643143](https://tva1.sinaimg.cn/large/008eGmZEgy1gmpxgptg5yj310z0u0k6q.jpg)
+![image-20210116225643143](/images/iphone-backup/06.jpg)
 
 包括手机测评的钟文泽也遇到了：
 
-![image-20210116224641401](https://tva1.sinaimg.cn/large/008eGmZEgy1gmpx6cmz9hj30ug0u0wsl.jpg)
+![image-20210116224641401](/images/iphone-backup/07.jpg)
 
 以上各种吐槽，各种小技巧，试了切换WiFi，更换DNS，使用科学上网，使用蜂窝网络，都以失败告终。最终还是什么都不做，把手机放在床头柜，又放了一整夜，最后早上起来，发现完全恢复了。所以结论就是，需要稳定的网络，不去操作手机，等系统后台自动缓慢恢复。很多人反映都是可以完整恢复的，只是时间问题。所以，也许，还需要一点运气吧。
 
@@ -125,7 +125,7 @@ https://v2ex.com/t/520683
 
 其实，以上内容，**最重要的建议还是做好备份**。如果你不觉得手动给手机备份到电脑麻烦，那么这是一个比较好的习惯。然后，养成过段时间就把微信的聊天记录备份一次，也是一个很好的习惯。微信PC端可以给手机聊天记录做备份：
 
-![image-20210116231026612](https://tva1.sinaimg.cn/large/008eGmZEgy1gmpxuzyo30j30rg0iwk33.jpg)
+![image-20210116231026612](/images/iphone-backup/08.jpg)
 
 如果，你觉得以上都有点麻烦，需要经常去主动手工操作。你可以尝试用iCloud给手机做个完整备份，每天睡觉之后，系统会在后台把手机新的内容上传备份到云端，所以你就有了一个完整而又比较新的备份。万一有一天手机出了问题，它能帮上大忙。我很感谢它。
 

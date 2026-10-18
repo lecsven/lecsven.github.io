@@ -10,21 +10,21 @@ tags:
 
 右键选择”Git Bash Here"
 
-![image-20210506112733590](https://i.loli.net/2021/05/06/5jFrd8B7tsfP2n3.png)
+![image-20210506112733590](/images/github-pages-flow/01.png)
 
 
 
 输入`hexo new post "文章名字"`，注意文章名的双引号得确认是英文输入的。
 
-![image-20210506113308742](https://i.loli.net/2021/05/06/WUcqxfioGaAgdDh.png)
+![image-20210506113308742](/images/github-pages-flow/02.png)
 
 然后在`H:\Dropbox\all-blog\lecsven.github.io\source\_posts\`打开md文件
 
-![image-20210506113837848](https://i.loli.net/2021/05/06/i7ESWrf4mDJGLqb.png)
+![image-20210506113837848](/images/github-pages-flow/03.png)
 
 开始写文章
 
-![image-20210506114034412](https://i.loli.net/2021/05/06/JuD9SfgqAlsKUxZ.png)
+![image-20210506114034412](/images/github-pages-flow/04.png)
 
 完成之后按照以下顺序操作：
 
@@ -37,15 +37,15 @@ git push origin hexo # 推送到远程仓库的 hexo 分支
 
 操作完成：
 
-![image-20210506114346103](https://i.loli.net/2021/05/06/eDSvjJhQpk35Ngu.png)
+![image-20210506114346103](/images/github-pages-flow/05.png)
 
 打开`https://github.com/lecsven/lecsven.github.io`查看状态
 
-![image-20210506114555327](https://i.loli.net/2021/05/06/5xFVDezwglsQT6f.png)
+![image-20210506114555327](/images/github-pages-flow/06.png)
 
 确认静态文件已经正确上传：
 
-![image-20210506114652456](https://i.loli.net/2021/05/06/wfSCbmg5dEuhTol.png)
+![image-20210506114652456](/images/github-pages-flow/07.webp)
 
 **接下来部署静态文件，使得内容可以在网页上面正常显示**
 
@@ -76,19 +76,19 @@ hexo d # 部署（跟 _config.yml 文件中的 deploy 选项相关）
 
 本地预览：
 
-![image-20210506120027729](https://i.loli.net/2021/05/06/lmDcVPaQwBWNSTH.png)
+![image-20210506120027729](/images/github-pages-flow/08.png)
 
 部署完成：
 
-![image-20210506120131026](https://i.loli.net/2021/05/06/uYSh3AQIrTmP7tC.png)
+![image-20210506120131026](/images/github-pages-flow/09.png)
 
 打开master分支确保最新的文件已更新
 
-![image-20210506120254668](https://i.loli.net/2021/05/06/nFQZgJ15vwRctki.png)
+![image-20210506120254668](/images/github-pages-flow/10.png)
 
 在Github Page 查看下效果：
 
-![image-20210506120535125](https://i.loli.net/2021/05/06/q5diXnsH7RAz2C4.png)
+![image-20210506120535125](/images/github-pages-flow/11.png)
 
 大功告成！
 
